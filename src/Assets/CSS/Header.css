@@ -72,6 +72,11 @@ html,body{ scroll-behavior: smooth}
   height: 100px;
 }
 
+.Header .navbar > li a,
+.Header .navbar > li a {
+  border-bottom: 3.5px solid transparent;
+}
+
 .Header .navbar > li:hover a,
 .Header .navbar > li a.curr-page {
   border-bottom: 3.5px solid #348e38;

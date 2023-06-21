@@ -27,6 +27,7 @@
   text-decoration: none;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.579);
+  transition: 0.5s;
 }
 
 .news-component > a > img {
@@ -36,13 +37,20 @@
   border-radius: 5px;
   -webkit-transition: 0.3s ease-in;
   transition: 0.3s ease-in;
+  object-fit: cover;
 }
 
 
 .news-component>a:hover>img {
-    -webkit-transform: scale(1.03);
-	transform: scale(1.03);
+    -webkit-transform: scale(1.02);
+	transform: scale(1.02);
 }
+
+.news-component>a:hover {
+  background-color:rgba(255, 255, 255, 0.479);
+  color: rgb(104, 104, 104);
+}
+
 
 .news-component .description {
     display: block;
