@@ -28,6 +28,7 @@
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.579);
   transition: 0.5s;
+  position: relative;
 }
 
 .news-component > a > img {
@@ -49,6 +50,8 @@
 .news-component>a:hover {
   background-color:rgba(255, 255, 255, 0.479);
   color: rgb(104, 104, 104);
+  
+  top: -2px;
 }
 
 

@@ -26,7 +26,24 @@ html,body{ scroll-behavior: smooth}
 .contact-header {
   width: 100%;
   height: 40px;
-  background-color: #348e38;
+  background-color: #348e3870;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.contact-header .address {
+  color: white;
+
+}
+.contact-header>ul {
+  list-style: none;
+  display: flex;
+}
+
+.contact-header>ul>li a {
+  display: block;
+  width: 30px;
 }
 
 .Header {
@@ -128,7 +145,7 @@ html,body{ scroll-behavior: smooth}
   justify-content: center;
   border-radius: 10px;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .logo {
     margin-left: unset;
   }
@@ -147,6 +164,16 @@ html,body{ scroll-behavior: smooth}
   .fundaraising {
     display: none;
   }
+
+  .contact-header {
+    font-size: 0.6rem;
+    flex-direction: column;
+  }
+  .contact-header li a {
+    font-size: 1rem;
+    flex-direction: column;
+  }
+  
 }
 
 .mobile-nav {

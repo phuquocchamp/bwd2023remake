@@ -1,4 +1,8 @@
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faUsers } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import logo from "../Img/logo.png";
 import bar from "../Img/bars-solid.svg";
 import "../CSS/Header.css";
@@ -8,7 +12,6 @@ function Header() {
   const [mobileNavStyle, setMobileNavStyle] = useState({ top: "130px" });
   const [HeaderClass, setHeaderClass] = useState("Header");
   const [fullHeaderClass, setFullHeaderClass] = useState("full-header");
-  let p=window.scrollY;
   let handleScroll = () => {
     if (window.scrollY > 1) {
       setHeaderClass("Header white-header");
@@ -17,13 +20,12 @@ function Header() {
       setHeaderClass("Header");
       setMobileNavStyle({ top: "150px" });
     }
-    if(window.scrollY>p) {
+    if(window.scrollY>1) {
       setFullHeaderClass("full-header full-header2");
     }
     else {
       setFullHeaderClass("full-header");
     }
-    p=window.scrollY
   };
   window.addEventListener('scroll', handleScroll);
   
@@ -64,7 +66,13 @@ function Header() {
   return (
     <div className={fullHeaderClass}>
       <div className="contact-header">
-
+        <p className="address">470 Đường Trần Đại Nghĩa, Khu đô thị, Ngũ Hành Sơn, Đà Nẵng 550000</p>
+        <ul>
+          <li><a href="mailto:nhanhsb.22git@vku.udn.vn"><FontAwesomeIcon icon={faEnvelope} /></a></li>
+          <li><Link to="/about-us"><FontAwesomeIcon icon={faUsers} /></Link></li>
+          <li><a href="https://github.com/phuquocchamp/bwd2023remake"><FontAwesomeIcon icon={faGithub} /></a></li>
+          <li><a href="https://www.facebook.com/JustA707"><FontAwesomeIcon icon={faFacebook} /></a></li>
+        </ul>
       </div>
       <div className={HeaderClass}>
         <Link to="/">
