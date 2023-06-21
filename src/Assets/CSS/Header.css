@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Rubik:wght@300&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -7,19 +7,37 @@
 
 html,body{ scroll-behavior: smooth}
 
+.full-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid rgba(164, 164, 164, 0.397);
+  display: flex;
+  flex-direction: column;
+  transition: 0.4s;
+}
+
+.full-header2 {
+  position: fixed;
+  top: -40px;
+}
+
+.contact-header {
+  width: 100%;
+  height: 40px;
+  background-color: #348e38;
+}
+
 .Header {
   display: flex;
   width: 100%;
   height: 100px;
-  position: fixed;
-  top: 0;
   background: transparent;
-  border-bottom: 1px solid rgba(164, 164, 164, 0.397);
-
   align-items: center;
   justify-content: space-around;
   transition: 0.3s;
-  z-index: 999;
+  
 }
 
 .Header .navbar {
@@ -32,14 +50,16 @@ html,body{ scroll-behavior: smooth}
   width: 130px;
   display: flex;
   justify-content: center;
-  font-family: Montserrat, sans-serif;
+  font-family: 'Rubik', sans-serif;
+
   font-weight: bold;
-  height: 50px;
+  height: 60px;
   align-items: center;
 }
 
 .Header .navbar > li a {
-  transition: 0.5s;
+  font-size: 1.1rem;
+  transition: 0.2s;
   text-decoration: none;
   color: rgb(226, 226, 226);
   height: 100%;
@@ -50,6 +70,11 @@ html,body{ scroll-behavior: smooth}
 .Header img {
   width: 100px;
   height: 100px;
+}
+
+.Header .navbar > li:hover a,
+.Header .navbar > li a.curr-page {
+  border-bottom: 3.5px solid #348e38;
 }
 
 .Header .navbar > li:hover a,
@@ -65,21 +90,38 @@ html,body{ scroll-behavior: smooth}
 
 .white-header {
   background: unset;
-  background-color: white;
-  height: 70px;
+  background-color: #e8f5e9;
 }
 
-.white-header .navbar > li a {
-  color: rgba(78, 78, 78, 0.977);
+.Header>.fundaraising {
+  transition: 200ms;
 }
+
+.white-header .navbar > li a,.white-header>.fundaraising {
+  color: #0f4229;
+}
+
+.Header>.fundaraising:hover {
+  color: white;
+  background-color: #348e38;
+}
+
 
 .Header .bar-icon {
   height: 40px;
   width: 40px;
   display: none;
 }
-.logo {
-  margin-left: -10vw;
+
+.fundaraising {
+  width: 150px;
+  height: 60px;
+  border: 1.5px solid #3791475d;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
 }
 @media only screen and (max-width: 600px) {
   .logo {
@@ -96,6 +138,9 @@ html,body{ scroll-behavior: smooth}
 
   .Header .bar-icon {
     display: block;
+  }
+  .fundaraising {
+    display: none;
   }
 }
 

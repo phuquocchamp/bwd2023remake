@@ -5,18 +5,28 @@ import "../CSS/Header.css";
 import { Link, useLocation } from "react-router-dom";
 
 function Header() {
-  const [mobileNavStyle, setMobileNavStyle] = useState({ top: "100px" });
+  const [mobileNavStyle, setMobileNavStyle] = useState({ top: "130px" });
   const [HeaderClass, setHeaderClass] = useState("Header");
+  const [fullHeaderClass, setFullHeaderClass] = useState("full-header");
+  let p=window.scrollY;
   let handleScroll = () => {
-    if (window.pageYOffset > 1) {
+    if (window.scrollY > 1) {
       setHeaderClass("Header white-header");
-      setMobileNavStyle({ top: "70px" });
+      setMobileNavStyle({ top: "130px" });
     } else {
       setHeaderClass("Header");
-      setMobileNavStyle({ top: "100px" });
+      setMobileNavStyle({ top: "150px" });
     }
+    if(window.scrollY>p) {
+      setFullHeaderClass("full-header full-header2");
+    }
+    else {
+      setFullHeaderClass("full-header");
+    }
+    p=window.scrollY
   };
-  window.onscroll = handleScroll;
+  window.addEventListener('scroll', handleScroll);
+  
 
   var [barClass, setBarClass] = useState("mobile-nav");
   let handleBar = () => {
@@ -26,7 +36,7 @@ function Header() {
   };
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 600) {
+    if (window.innerWidth > 1000) {
       setBarClass("mobile-nav");
     }
   });
@@ -49,58 +59,65 @@ function Header() {
     setLink2(window.location.pathname.includes("/News") ? "curr-page" : "");
     setLink3(window.location.pathname.includes("/Report") ? "curr-page" : "");
     setLink4(window.location.pathname.includes("/about-us") ? "curr-page" : "");
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   }, [CurrLink]);
   return (
-    <div className={HeaderClass}>
-      <Link to="/">
-        <img className="logo" src={logo} alt="logo" />
-      </Link>
-      <ul className="navbar">
-        <li key="1">
-          <Link to="/" className={link1}>
-            Trang chủ
-          </Link>
-        </li>
-        <li key="2">
-          <Link to="/News" className={link2}>
-            Thông tin
-          </Link>
-        </li>
-        <li key="3">
-          <Link to="/Report" className={link3}>
-            Báo cáo
-          </Link>
-        </li>
-        <li key="4">
-          <Link to="/about-us" className={link4}>
-            Về chúng tôi
-          </Link>
-        </li>
-      </ul>
-      <img src={bar} alt="bar" className="bar-icon" onClick={handleBar} />
-      <ul className={barClass} style={mobileNavStyle}>
-        <li key="1" onClick={handleBar}>
-          <Link to="/" className={link1}>
-            Trang chủ
-          </Link>
-        </li>
-        <li key="2" onClick={handleBar}>
-          <Link to="/News" className={link2}>
-            Thông tin
-          </Link>
-        </li>
-        <li key="3" onClick={handleBar}>
-          <Link to="/Report" className={link3}>
-            Báo cáo
-          </Link>
-        </li>
-        <li key="4" onClick={handleBar}>
-          <Link to="/about-us" className={link4}>
-            Về chúng tôi
-          </Link>
-        </li>
-      </ul>
+    <div className={fullHeaderClass}>
+      <div className="contact-header">
+
+      </div>
+      <div className={HeaderClass}>
+        <Link to="/">
+          <img className="logo" src={logo} alt="logo" />
+        </Link>
+        <ul className="navbar">
+          <li key="1">
+            <Link to="/" className={link1}>
+              Trang chủ
+            </Link>
+          </li>
+          <li key="2">
+            <Link to="/News" className={link2}>
+              Thông tin
+            </Link>
+          </li>
+          <li key="3">
+            <Link to="/Report" className={link3}>
+              Báo cáo
+            </Link>
+          </li>
+          <li key="4">
+            <Link to="/about-us" className={link4}>
+              Về chúng tôi
+            </Link>
+          </li>
+        </ul>
+
+        <Link to="/fundaraising" className="fundaraising">Đóng góp</Link>
+        <img src={bar} alt="bar" className="bar-icon" onClick={handleBar} />
+        <ul className={barClass} style={mobileNavStyle}>
+          <li key="1" onClick={handleBar}>
+            <Link to="/" className={link1}>
+              Trang chủ
+            </Link>
+          </li>
+          <li key="2" onClick={handleBar}>
+            <Link to="/News" className={link2}>
+              Thông tin
+            </Link>
+          </li>
+          <li key="3" onClick={handleBar}>
+            <Link to="/Report" className={link3}>
+              Báo cáo
+            </Link>
+          </li>
+          <li key="4" onClick={handleBar}>
+            <Link to="/about-us" className={link4}>
+              Về chúng tôi
+            </Link>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

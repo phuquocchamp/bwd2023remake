@@ -13,7 +13,7 @@ function Footer() {
                         FireWing là một trang web được phát triển bởi các sinh viên VKU với mục tiêu cung cấp thông tin
                         và dự báo về cháy rừng sử dụng công nghệ AI.
                     </p>
-                    <div class="social">
+                    <div className="social">
                         <FontAwesomeIcon icon={faGitSquare} />
                         <FontAwesomeIcon icon={faFacebookSquare} />
                         <FontAwesomeIcon icon={faYoutubeSquare} />
