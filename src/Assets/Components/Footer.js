@@ -98,7 +98,7 @@ const Footer = () => {
                     </div>
 
                     <div className="item__panel">
-                        <p className="item__heading">Hostline</p>
+                        <p className="item__heading">Hotline</p>
                         <ul className="item__menu">
                             <li>
                                 <a href="">114</a>
@@ -118,7 +118,7 @@ const Footer = () => {
 
                     {/* Newslatter */}
                     <div className="item__panel">
-                        <p className="item__heading">Newslatter</p>
+                        <p className="item__heading">Newsletter</p>
                         <p className="text__block">Hãy nhập Email của bạn để nhận thống báo mới nhất từ chúng tôi !</p>
                         <div className="subcribe__widget">
                             <div className="widget__input">

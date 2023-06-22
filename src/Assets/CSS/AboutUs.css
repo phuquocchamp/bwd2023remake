@@ -6,6 +6,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+a {
+    text-decoration: none;
+    color: rgb(222, 222, 222)
+}
 
 .about-us {
     height: 100vh;
