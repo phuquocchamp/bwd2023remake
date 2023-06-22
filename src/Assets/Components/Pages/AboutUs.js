@@ -1,12 +1,16 @@
-import {memo} from 'react'
+import { memo } from 'react';
 import '../../CSS/AboutUs.css';
 import CarouselSwiper from '../LittleComponent/CarouselSwiper';
 
 function AboutUs() {
     return (
-        
         <div>
             <div className="about-us">
+                {/* Inner Image */}
+                {/* <div className="inner__title">
+                    <div className="overlay__image"></div>
+                    <div className="banner__title">FireWing</div>
+                </div> */}
                 {/* Thông tin về Đề Tài */}
                 <div className="container__info">
                     <h1 className="container__title">

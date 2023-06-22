@@ -20,6 +20,21 @@
     justify-content: center;
 }
 
+/* Inner Title */
+
+/* .inner__title {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    background-color: #336633a1;
+    background-repeat: no-repeat;
+    background-position: center;
+} */
+
+
+
+
+/* Project info */
 .container__info {
     padding: 20px;
     margin-top: 5vh;
