@@ -20,7 +20,7 @@
 
     height: auto;
     width: 100%;
-    background: url('../Img/Report_bg.jpg');
+    background: url('../Img/932271.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-size: cover;
@@ -191,6 +191,7 @@
     font-size: 1.5rem;
     padding: auto;
     padding-left: 2rem;
+    background-color: rgba(235, 255, 231, 0.551);
 }
 
 .fundraising .main-form >button {
@@ -200,20 +201,35 @@
     border-radius: 10px;
     cursor: pointer;
     font-size: 1.5rem;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.642);
+    font-weight: bold;
+    transition: 0.3s;
+    color: #000000e3;
 }
 
+.fundraising .main-form >button:hover {
+    background-color:#2f9e44; 
+    color: rgba(255, 255, 255, 0.653);
+}
+
+
 .fundraising .main-form .radiolist>button {
-    transition: 100ms;
     font-weight: bold;
-    background-color:rgba(255, 255, 255, 0.688) ;
+    background-color:rgba(212, 252, 204, 0.688) ;
+    font-size: 1.5rem;
+    border-radius: 1px;
+    transition: 0.2s;
+    cursor: pointer;
+    height: 3rem;
+    width: 23%;
+    color: #212121ee;
 }
 
 .fundraising .main-form .radiolist>button.selected,
 .fundraising .main-form .radiolist>button:hover
 {
-    background-color: #00cc0a7e;
-    color: white;
+    background-color: #00cc0a5b;
+    color: rgba(255, 255, 255, 0.721);
 }
 
 .fundraising .main-form .radiolist {
@@ -226,16 +242,6 @@
     font-size: 1.5rem;
 }
 
-.fundraising .main-form .radiolist>button{
-    font-size: 1.5rem;
-    border-radius: 1px;
-}
-
-.fundraising .main-form .radiolist >button {
-    cursor: pointer;
-    height: 3rem;
-    width: 23%;
-}
 
 
 
