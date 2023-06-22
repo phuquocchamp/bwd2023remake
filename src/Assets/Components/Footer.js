@@ -59,7 +59,7 @@ const Footer = () => {
                         <div className="social__panel">
                             <div className="social__item">
                                 <FontAwesomeIcon icon={faGithub} />
-                                <a href="https://github.com/phuquocchamp/bwd2023remake"></a>
+                                <a href="https://github.com/phuquocchamp/bwd2023remake" aria-label='Link to github'></a>
                             </div>
                             <div className="social__item">
                                 <FontAwesomeIcon icon={faYoutube} />
