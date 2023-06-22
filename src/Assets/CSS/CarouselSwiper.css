@@ -12,13 +12,15 @@
     /* margin: 10em; */
     /* padding: 100px 100px; */
     color: black;
-    background: rgba(187, 187, 187, 0.329)
+    background: radial-gradient(circle at 64% 52%, rgba(255, 255, 0, 1) 0%, rgba(130, 238, 136, 1) 0%, rgba(148, 238, 130, 0) 52%);
 }
 
 .avatar {
     height: 400px;
-    /* border-radius: 50%; */
+    /* width: 400px; */
+    border-radius: 15px;
     overflow: hidden;
+
 }
 
 .avatar img {

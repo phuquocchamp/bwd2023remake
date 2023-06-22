@@ -85,6 +85,7 @@
 
 .location__content, .hostline__content, .email__content {
     text-align: left;
+    font-size: 16px;
     /* padding-top: 10px; */
 }
 

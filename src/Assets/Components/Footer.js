@@ -60,7 +60,7 @@ const Footer = () => {
                         <div className="social__panel">
                             <div className="social__item">
                                 <FontAwesomeIcon icon={faGithub} />
-                                <a href="https://github.com/phuquocchamp/bwd2023remake" aria-label='Link to github'></a>
+                                <a href="https://github.com/phuquocchamp/bwd2023remake" aria-label="Link to github"></a>
                             </div>
                             <div className="social__item">
                                 <FontAwesomeIcon icon={faYoutube} />
@@ -86,13 +86,13 @@ const Footer = () => {
                             </li>
 
                             <li>
-                            <Link to="/News">Thông tin</Link>
+                                <Link to="/News">Thông tin</Link>
                             </li>
                             <li>
                                 <Link to="/Report">Báo cáo</Link>
                             </li>
                             <li>
-                            <Link to="about-us">Về chúng tôi</Link>
+                                <Link to="about-us">Về chúng tôi</Link>
                             </li>
                         </ul>
                     </div>
@@ -118,7 +118,7 @@ const Footer = () => {
 
                     {/* Newslatter */}
                     <div className="item__panel">
-                        <p className="item__heading">Newslatter</p>
+                        <p className="item__heading">Newsletter</p>
                         <p className="text__block">Hãy nhập Email của bạn để nhận thống báo mới nhất từ chúng tôi !</p>
                         <div className="subcribe__widget">
                             <div className="widget__input">
