@@ -1,76 +1,92 @@
-import '../CSS/Footer.css';
+import React from 'react';
+// import '../Img/logo.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGitSquare, faFacebookSquare, faYoutubeSquare, faInstagramSquare } from '@fortawesome/free-brands-svg-icons';
 
-function Footer() {
+import '../CSS/Footer.css';
+import { faEnvelope, faLocationDot, faPhoneFlip } from '@fortawesome/free-solid-svg-icons';
+import {
+    faSquareFacebook,
+    faSquareGithub,
+    faSquareInstagram,
+    faSquareYoutube,
+} from '@fortawesome/free-brands-svg-icons';
+
+const Footer = () => {
     return (
         <footer className="footer">
-            <div className="footer__container">
-                {/* Project Informartion */}
-                <div className="project__info">
-                    <h3>FireWing</h3>
-                    <p>
-                        FireWing là một trang web được phát triển bởi các sinh viên VKU với mục tiêu cung cấp thông tin
-                        và dự báo về cháy rừng sử dụng công nghệ AI.
-                    </p>
-                    <div class="social">
-                        <FontAwesomeIcon icon={faGitSquare} />
-                        <FontAwesomeIcon icon={faFacebookSquare} />
-                        <FontAwesomeIcon icon={faYoutubeSquare} />
-                        <FontAwesomeIcon icon={faInstagramSquare} />
+            <div className="flow__container">
+                <div className="logo__footer">{/* <img src="../Img/logo.svg" alt="Logo" /> */}</div>
+                <div className="contact__info">
+                    <div className="contact__item location__item">
+                        <div className="contact__location">
+                            <div className="contact__icon">
+                                <FontAwesomeIcon icon={faLocationDot} />
+                            </div>
+                            <div className="location__content">
+                                470 Đường Trần Đại Nghĩa, Khu đô thị, Ngũ Hành Sơn, Đà Nẵng
+                            </div>
+                        </div>
                     </div>
-                </div>
-                {/* Related Information */}
-                <div className="related__info">
-                    <h3>Related Information</h3>
-                    <ul>
-                        <li>
-                            <a href="#faq">F.A.Q</a>
-                        </li>
-                        <li>
-                            <a href="#cookies-policy">Cookies Policy</a>
-                        </li>
-                        <li>
-                            <a href="#terms-of-services">Terms Of Service</a>
-                        </li>
-                        <li>
-                            <a href="#support">Support</a>
-                        </li>
-                    </ul>
-                </div>
-                <div className="related__info">
-                    <h3 className='heading'>Information</h3>
-                    <ul>
-                        <li>
-                            <a href="#faq">F.A.Q</a>
-                        </li>
-                        <li>
-                            <a href="#cookies-policy">Cookies Policy</a>
-                        </li>
-                        <li>
-                            <a href="#terms-of-services">Terms Of Service</a>
-                        </li>
-                        <li>
-                            <a href="#support">Support</a>
-                        </li>
-                    </ul>
-                </div>
-                {/* Feedback Form */}
-                <div className="feedback__section">
-                    <h3 className='heading'>Newsletter</h3>
-                    <div>
-                        <input type="email" placeholder="Your email id here" />
-                        <button>Subscribe</button>
+                    <div className="contact__item hostline__item">
+                        <div className="contact__hostline">
+                            <div className="contact__icon">
+                                <FontAwesomeIcon icon={faPhoneFlip} />
+                            </div>
+                            <div className="hostline__content">
+                                <p className="phone__number">114</p>
+                                <p className="phone__number">1900 969 960</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="contact__item email__item">
+                        <div className="contact__email">
+                            <div className="contact__icon">
+                                <FontAwesomeIcon icon={faEnvelope} />
+                            </div>
+                            <div className="email__content">
+                                <p>firewing@pccc.vn</p>
+                                <p>firewing@pccc.vn</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <p className="footer__copyright">
-                Copyright © 2023 - Vietnam-Korea University of Information and Communication Technology - The University
-                of Danang
-            </p>
+            <div className="fixed__container">
+                <div className="info__container">
+                    <div className="item__panel">
+                        <p className="item__heading">About Us</p>
+                        <p className="text__block">
+                            FireWing giúp người dùng nắm bắt và cập nhật các thông tin về cháy rừng, bao gồm tình hình
+                            hiện tại, dự báo, đánh giá nguy cơ cháy rừng.
+                        </p>
+                        <div className="social__panel">
+                            <div className="social__item">
+                                <FontAwesomeIcon icon={faSquareGithub} />
+                                <a href="https://github.com/phuquocchamp/bwd2023remake"></a>
+                            </div>
+                            <div className="social__item">
+                                <FontAwesomeIcon icon={faSquareYoutube} />
+                                <a href="https://github.com/phuquocchamp/bwd2023remake"></a>
+                            </div>
+                            <div className="social__item">
+                                <FontAwesomeIcon icon={faSquareGithub} />
+                                <a href="https://github.com/phuquocchamp/bwd2023remake"></a>
+                            </div>
+                            <div className="social__item">
+                                <FontAwesomeIcon icon={faSquareInstagram} />
+                                <a href="https://github.com/phuquocchamp/bwd2023remake"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="buttom__footer">
+                <div className="nocopyright__container">
+                    <p className="copyright__text">"Copyright FireWing team - Best Web Design 2023"</p>
+                </div>
+            </div>
         </footer>
     );
-}
-
+};
 export default Footer;
