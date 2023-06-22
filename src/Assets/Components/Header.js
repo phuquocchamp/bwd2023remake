@@ -75,8 +75,9 @@ function Header() {
         </ul>
       </div>
       <div className={HeaderClass}>
-        <Link to="/">
+        <Link to="/" className="logo-link">
           <img className="logo" src={logo} alt="logo" />
+          Fire<span>Wing</span>
         </Link>
         <ul className="navbar">
           <li key="1">

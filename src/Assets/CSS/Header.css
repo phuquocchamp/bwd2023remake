@@ -29,7 +29,7 @@ html,body{ scroll-behavior: smooth}
   background-color: #348e3870;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .contact-header .address {
@@ -88,6 +88,20 @@ html,body{ scroll-behavior: smooth}
   width: 100px;
   height: 100px;
 }
+
+.Header .logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #5d7167;
+}
+
+.Header .logo-link span{
+  color: #348e38;
+}
+
 
 .Header .navbar > li a,
 .Header .navbar > li a {
@@ -152,6 +166,10 @@ html,body{ scroll-behavior: smooth}
   .Header {
     justify-content: space-between;
     padding: 0 15px;
+  }
+
+  .Header .logo-link {
+    font-size: 1rem;
   }
 
   .Header .navbar {

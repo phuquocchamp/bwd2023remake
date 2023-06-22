@@ -249,7 +249,7 @@ transition: .3s ease-in;
   }
   .prevention-page .prevention-content-pane > a,
   .contact-page .contact-content-pane>a {
-    margin: inherit auto;
+    margin: inherit 0;
     width: 100%;
   
   }
