@@ -326,10 +326,11 @@
       width: 100%;
       text-align: center;
     }   
-    .fundraising .main-form input
+    .fundraising .main-form input,
+    .fundraising .main-form >button
      {
         display: block;
-        height: 2rem;
+        height: 2.5rem;
         border-radius: 3px;
         font-size: 1rem;
         padding-left: 1rem;
