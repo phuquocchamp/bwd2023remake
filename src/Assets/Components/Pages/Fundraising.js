@@ -46,7 +46,7 @@ function Fundraising() {
     const [phoneNumber,setPhoneNumber] = useState('');
     const [email,setEmail] = useState('');
     const arr=[50,200,500,1000];
-    const [amount,setAmount]=useState(50);
+    const [amount,setAmount]=useState(50000);
     return (
 
         <div>
@@ -68,10 +68,10 @@ function Fundraising() {
                             <div className='radiolist'>
                                 {arr.map((money)=>(
                                     <button key={money} value={money} 
-                                    className={money==amount?'selected':''} 
+                                    className={money*1000===amount?'selected':''} 
                                     onClick={(e)=>{
-                                        setAmount(e.target.value);
-                                    }}>{money}</button>
+                                        setAmount(e.target.value*1000);
+                                    }}>{money}k</button>
                                 ))
 
                                 }
