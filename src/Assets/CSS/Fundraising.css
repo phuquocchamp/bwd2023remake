@@ -28,17 +28,18 @@
     justify-content: center;
 
 }
-.fundraising .title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    padding-bottom: 50px;
-}
+
 .fundraising .contact-title{
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
 }
+
+.fundraising .container {
+    height: 80vh;
+    margin-top: 200px;
+}
+
 .fundraising .left-text{
     font-size: 1.2rem;
     width: 45%;
@@ -105,66 +106,24 @@
 .animate-bottom-to-top {
     animation: float-bottom-to-top 1s ease-in-out;
 }
-.fundraising .right-text{
-    font-size: 1.2rem;
-    width: 45%;
-    text-align: left;
-    justify-content: space-between;
-    line-height: 35px;
-}
-.fundraising .row{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    padding-bottom: 75px;
-}
-.fundraising .contact-row{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    padding-bottom: 40px;
-}
-.fundraising .column {
-    float: left;
-    width: 50%;
-    height: 0px;
-    color: black;
-  }
+
+
   .fundraising .container {
     padding: 20px;
-    margin: 10vh auto;
+    margin: 150px auto 10vh auto;
     width: 80%;
     padding: 5%;   
     
     text-align: center;
-    margin-top: 12vh;
     color: white;
     background: rgba(49, 49, 49, 0.66);
     border-radius: 20px;
     backdrop-filter: blur(5px); 
 }
 
-.fundraising .contact{
-    padding: 20px;
-
-    margin: 10vh auto;
-    width: 100%;
-    padding: 5%;   
-    display: flex;
-    text-align: center;
-    color: orangered;
-    margin-top: 15vh;
-    padding-bottom: 25px;
-    color: white;
-    background: white;
-
-}
-
 .fundraising .head_text{
     text-align: left;
-    font-size: 70px;
-    margin-left: 50px;
+    font-size: 3rem;
     margin-top: 10px;
     line-height: 35px;
     color: black;
@@ -190,8 +149,90 @@
     line-height: 35px;
     color: black;
 }
+
+.fundraising .container .title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #01c20a;
+}
+
+.fundraising .main-form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.fundraising .main-form>* {
+    width: 100%;
+    margin: 10px auto;
+}
+
+.fundraising .flname {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fundraising .flname input {
+    width: 49%;
+}
+
+.fundraising .main-form input {
+    display: block;
+    height: 3rem;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    padding: auto;
+    padding-left: 2rem;
+}
+
+.fundraising .main-form >button {
+    height: 3rem;
+    width: 100%;
+    max-width: 20rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.fundraising .main-form .radiolist {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.fundraising .main-form .radiolist >button {
+    cursor: pointer;
+    height: 3rem;
+    width: 23%;
+}
+
+
+
 @media only screen and (max-width: 700px) {
-    .fundraising>.contact,
+    .fundraising .container {
+        padding: 10px;
+    }
+
+    .fundraising .container .main-form {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .fundraising .container .title {
+        font-size: 2rem;
+    }
+
+    .fundraising .container>.head-text {
+        font-size: 1.5rem;
+    }
+
+    .fundraising .container>h3 {
+        font-size: 0.8rem;
+    }
     .fundraising>.container{
         margin-left: auto;
         margin-right: auto;
@@ -201,6 +242,11 @@
         font-size: 1.6rem;  
         padding-bottom: 15px;  
     }
+    
+.fundraising .main-form>* {
+    width: 100%;
+    margin: 5px auto;
+}
     .fundraising .fundraising_text,
     .fundraising .fundraising_head_img{
         width: 100%;
@@ -246,6 +292,18 @@
       width: 100%;
       text-align: center;
     }   
+    .fundraising .main-form input
+     {
+        display: block;
+        height: 2rem;
+        border-radius: 3px;
+        font-size: 1rem;
+        padding-left: 1rem;
+    }
+    .fundraising .main-form .radiolist >button {
+        height: 2rem;
+        font-size: 1rem;
+    }
   }
 @media only screen and (max-width: 400px) {
     .fundraising .title {

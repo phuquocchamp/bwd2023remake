@@ -1,4 +1,5 @@
 import '../../CSS/NewsComponent.css';
+import { memo } from 'react';
 function NewsComponent({data}) {
   return (
     <div className="news-component">
@@ -11,4 +12,4 @@ function NewsComponent({data}) {
   );
 }
 
-export default NewsComponent;
+export default memo(NewsComponent);

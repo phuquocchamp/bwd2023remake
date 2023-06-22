@@ -61,6 +61,7 @@ const CarouselSwiper = () => {
         <Swiper
             modules={[Autoplay, Navigation, Pagination]}
             className="carousel__container"
+            style={{marginTop:'20px'}}
             spaceBetween={0}
             slidesPerView={1}
             navigation
