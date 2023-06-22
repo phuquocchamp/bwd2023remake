@@ -66,8 +66,13 @@ function Fundraising() {
                     </div>
                 </AnimatedLeftToRight>
                 <div className="container">
+                    <h1 style={{color: "lightgreen"}}> Quyên góp</h1>
+                    <br></br>
+                    <h1 className='head-text'>VÌ MỘT MÔI TRƯỜNG XANH SẠCH ĐẸP</h1>
+                    <br></br>
+                    <h3>Số tiền của bạn có thế cứu lấy thế giới. Hãy cùng chúng tôi tiếp tục chung tay góp phần bảo vệ môi trường.</h3>
                     
-
+                
                 </div>
 
                 <br></br> <br></br> <br></br> 
