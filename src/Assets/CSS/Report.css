@@ -124,6 +124,12 @@
     height: 0px;
     color: black;
   }
+
+  .report .headcolumn {
+    float: left;
+    width: 50%;
+    color: black;
+  }
   .report .container {
     padding: 20px;
     margin: 10vh auto;

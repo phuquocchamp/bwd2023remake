@@ -6,6 +6,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+a {
+    text-decoration: none;
+    color: rgb(222, 222, 222)
+}
 
 .about-us {
     height: 100vh;
@@ -44,17 +48,18 @@
     color: white;
     background: rgba(49, 49, 49, 0.66);
     border-radius: 20px;
+    backdrop-filter: blur(5px);
 }
 
 .container__title {
-    font-size: 2rem;
+    font-size: 2.4rem;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 .container__description {
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 1.4rem;
+    line-height: 1.4;
     margin-bottom: 10px;
 }
 
@@ -66,6 +71,8 @@
     text-align: center;
     color: white;
 }
+
+
 
 /* Media Queries */
 @media (max-width: 768px) {

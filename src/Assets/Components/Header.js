@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope,faPhone } from '@fortawesome/free-solid-svg-icons'
 import { faUsers } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import logo from "../Img/logo.png";
@@ -66,7 +66,7 @@ function Header() {
   return (
     <div className={fullHeaderClass}>
       <div className="contact-header">
-        <p className="address">470 Đường Trần Đại Nghĩa, Khu đô thị, Ngũ Hành Sơn, Đà Nẵng 550000</p>
+        <p className="address"><FontAwesomeIcon icon={faPhone} />1900 969 960</p>
         <ul>
           <li><a href="mailto:nhanhsb.22git@vku.udn.vn"><FontAwesomeIcon icon={faEnvelope} /></a></li>
           <li><Link to="/about-us"><FontAwesomeIcon icon={faUsers} /></Link></li>

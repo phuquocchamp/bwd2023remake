@@ -98,7 +98,7 @@ const Footer = () => {
                     </div>
 
                     <div className="item__panel">
-                        <p className="item__heading">Hostline</p>
+                        <p className="item__heading">Hotline</p>
                         <ul className="item__menu">
                             <li>
                                 <a href="">114</a>
