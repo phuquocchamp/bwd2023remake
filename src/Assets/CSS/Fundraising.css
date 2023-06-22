@@ -180,6 +180,10 @@
     width: 49%;
 }
 
+.fundraising .main-form {
+    margin-top: 20px;
+}
+
 .fundraising .main-form input {
     display: block;
     height: 3rem;
@@ -195,14 +199,38 @@
     max-width: 20rem;
     border-radius: 10px;
     cursor: pointer;
+    font-size: 1.5rem;
+    background-color: white;
+}
+
+.fundraising .main-form .radiolist>button {
+    transition: 100ms;
+    font-weight: bold;
+    background-color:rgba(255, 255, 255, 0.688) ;
+}
+
+.fundraising .main-form .radiolist>button.selected,
+.fundraising .main-form .radiolist>button:hover
+{
+    background-color: #00cc0a7e;
+    color: white;
 }
 
 .fundraising .main-form .radiolist {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
+
+.fundraising .main-form>p {
+    font-size: 1.5rem;
+}
+
+.fundraising .main-form .radiolist>button{
+    font-size: 1.5rem;
+    border-radius: 1px;
+}
+
 .fundraising .main-form .radiolist >button {
     cursor: pointer;
     height: 3rem;
@@ -247,20 +275,20 @@
     width: 100%;
     margin: 5px auto;
 }
-    .fundraising .fundraising_text,
-    .fundraising .fundraising_head_img{
-        width: 100%;
-        height: auto;
-        margin-right: 20px;
-    }
-    .fundraising .left-text,
-    .fundraising .right-text {
-        width: 100%;    
-        text-align: center;
-    }
-    .fundraising .contact{
-        padding-bottom: 150px;
-    }
+
+.fundraising .main-form>p {
+    font-size: 1rem;
+}
+
+.fundraising .main-form .radiolist>button{
+    font-size: 1rem;
+}
+
+.fundraising .main-form >button {
+    height: 2rem;
+    font-size: 1rem;
+    border-radius: 3px;
+}
     .fundraising .description {
         font-size: 1.1rem;
         line-height: 1.3;
