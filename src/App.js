@@ -6,6 +6,7 @@ import MainPage from './Assets/Components/Pages/MainPage';
 import AboutUs from './Assets/Components/Pages/AboutUs';
 import News from './Assets/Components/Pages/News';
 import Report from './Assets/Components/Pages/Report';
+import Fundraising from './Assets/Components/Pages/Fundraising';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/News' element={<News />} />
         <Route path='/Report' element={<Report />} />
         <Route path='/about-us' element={<AboutUs />} />
+        <Route path='/fundaraising' element={<Fundraising />} />
       </Routes>
       <Footer />
     </>
