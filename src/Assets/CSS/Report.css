@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-img {
+.report img {
     border-radius: 10px;
 }
 
@@ -21,25 +21,25 @@ img {
     justify-content: center;
 
 }
-.title {
+.report .title {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 20px;
     padding-bottom: 50px;
 }
-.contact-title{
+.report .contact-title{
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
 }
-.left-text{
+.report .left-text{
     font-size: 1.2rem;
     width: 45%;
     text-align: left;
     justify-content: space-between;
     line-height: 35px;
 }
-.center-text{
+.report .center-text{
     color: white;
     font-size: 1.2rem;
     width: 100%;
@@ -47,7 +47,7 @@ img {
     justify-content: space-between;
     line-height: 35px;
 }
-.center-column {
+.report .center-column {
     
     
     width: 100%;
@@ -98,33 +98,33 @@ img {
 .animate-bottom-to-top {
     animation: float-bottom-to-top 1s ease-in-out;
 }
-.right-text{
+.report .right-text{
     font-size: 1.2rem;
     width: 45%;
     text-align: left;
     justify-content: space-between;
     line-height: 35px;
 }
-.row{
+.report .row{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 20px;
     padding-bottom: 75px;
 }
-.contact-row{
+.report .contact-row{
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
     padding-bottom: 40px;
 }
-.column {
+.report .column {
     float: left;
     width: 50%;
     height: 0px;
     color: black;
   }
-.container {
+  .report .container {
     padding: 20px;
     margin: 10vh auto;
     width: 80%;
@@ -135,9 +135,9 @@ img {
     color: white;
     background: rgba(49, 49, 49, 0.66);
     border-radius: 20px;
-    /* backdrop-filter: blur(5px); */
+    backdrop-filter: blur(5px); 
 }
-.contact{
+.report .contact{
     padding: 20px;
 
     margin: 0vh auto;
@@ -153,71 +153,77 @@ img {
     border-radius: 20px;
 }
 
-.report_img_1{
+.report .report_img_1{
     width: 450px;
     height: 275px;
 }
 @media only screen and (max-width: 700px) {
-    .title {
+    .report>.contact,
+    .report>.container{
+        margin-left: auto;
+        margin-right: auto;
+        width: 98%;
+    }
+    .report .title {
         font-size: 1.6rem;  
         padding-bottom: 15px;  
     }
-    .report_img_1{
+    .report .report_img_1{
         width: 100%;
         height: auto;
     }
-    .left-text,
-    .right-text {
+    .report .left-text,
+    .report .right-text {
         width: 100%;    
         text-align: center;
     }
-    .contact{
+    .report .contact{
         padding-bottom: 150px;
     }
-    .description {
+    .report .description {
         font-size: 1.1rem;
         line-height: 1.3;
         margin-bottom: 5px;
     }
-    .report_img_1{
+    .report .report_img_1{
         text-align: center;
     }
-    .row {
+    .report .row {
         padding-bottom: 20px;
     }
 }
 @media only screen and (max-width: 1024px) {
-    .left-text,
-    .report_img_1{
+    .report .left-text,
+    .report .report_img_1{
         width: 100%;
         height: auto;
     }
-    .contact{
+    .report .contact{
         padding-bottom: 150px;
     }
-    .right-text {
+    .report .right-text {
       width: 100%;
       text-align: center;
     }   
   }
 @media only screen and (max-width: 400px) {
-    .title {
+    .report .title {
         font-size: 1.4rem;
         margin-bottom: 15px;    
     }
-    .report_img_1{
+    .report .report_img_1{
         width: 100%;
         height: auto;
     }
-    .contact{
+    .report .contact{
         padding-bottom: 150px;
     }
-    .left-text,
-    .right-text {
+    .report .left-text,
+    .report .right-text {
         width: 100%;
         text-align: center;
     }
-    .description {
+    .report .description {
         line-height: 1.3;
         margin-bottom: 5px;
         font-size: 0.9rem;

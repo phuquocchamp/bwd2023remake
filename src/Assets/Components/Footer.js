@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../CSS/Footer.css';
 import { faEnvelope, faLocationDot, faPhoneFlip } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -81,17 +82,17 @@ const Footer = () => {
                         <p className="item__heading">Explore</p>
                         <ul className="item__menu">
                             <li>
-                                <a href="">Trang Chủ</a>
+                                <Link to="/">Trang Chủ</Link>
                             </li>
 
                             <li>
-                                <a href="">Thông tin</a>
+                            <Link to="/News">Thông tin</Link>
                             </li>
                             <li>
-                                <a href="">Báo cáo</a>
+                                <Link to="/Report">Báo cáo</Link>
                             </li>
                             <li>
-                                <a href="">Về chúng tôi</a>
+                            <Link to="about-us">Về chúng tôi</Link>
                             </li>
                         </ul>
                     </div>
