@@ -45,20 +45,20 @@ const Report = () => {
         <div className="report" >
           &emsp;
           <div className="contact">
-            <p style={{color: "orangered"}} className="contact-title">Khi phát hiện cháy rừng người dân địa phương ngay lập tức báo động và thông báo cho chính quyền địa phương và lực lượng chữa cháy chuyên nghiệp qua số điện thoại</p>
+            <p style={{color: "#348e38"}} className="contact-title">Khi phát hiện cháy rừng người dân địa phương ngay lập tức báo động và thông báo cho chính quyền địa phương và lực lượng chữa cháy chuyên nghiệp qua số điện thoại</p>
             <br></br><br></br> <br></br> 
             <div className='contact-row'>
               <div className="column">
                 Ban Chỉ đạo Nhà nước về kế hoạch bảo vệ và phát triển rừng<br></br> <br></br> 
-                <span style={{ color: "orangered", fontSize: "1.5rem" }}>1900 969 960</span>
+                <span style={{ color: "#348e38", fontSize: "1.5rem" }}>1900 969 960</span>
               </div>
               <div className="column">
                   Đội chữa cháy rừng khẩn cấp<br></br><br></br><br></br> 
-                  <span style={{ color: "orangered", fontSize: "1.5rem" }}>114</span>
+                  <span style={{ color: "#348e38", fontSize: "1.5rem" }}>114</span>
               </div>
             </div>
           </div>
-          <div className="container" style={{width: "80%"}}>
+          <div className="container">
             <h1 className="title">Thực trạng</h1>
             <AnimatedLeftToRight>
               <div className="row">

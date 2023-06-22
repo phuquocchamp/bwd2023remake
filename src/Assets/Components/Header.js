@@ -9,13 +9,13 @@ import "../CSS/Header.css";
 import { Link, useLocation } from "react-router-dom";
 
 function Header() {
-  const [mobileNavStyle, setMobileNavStyle] = useState({ top: "130px" });
+  const [mobileNavStyle, setMobileNavStyle] = useState({ top: "140px" });
   const [HeaderClass, setHeaderClass] = useState("Header");
   const [fullHeaderClass, setFullHeaderClass] = useState("full-header");
   let handleScroll = () => {
     if (window.scrollY > 1) {
       setHeaderClass("Header white-header");
-      setMobileNavStyle({ top: "130px" });
+      setMobileNavStyle({ top: "140px" });
     } else {
       setHeaderClass("Header");
       setMobileNavStyle({ top: "150px" });
@@ -123,6 +123,9 @@ function Header() {
             <Link to="/about-us" className={link4}>
               Về chúng tôi
             </Link>
+          </li>
+          <li key="5" onClick={handleBar}>
+          <Link to="/fundaraising" className="fundaraising">Đóng góp</Link>
           </li>
         </ul>
       </div>
