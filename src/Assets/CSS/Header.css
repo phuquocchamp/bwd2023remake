@@ -126,7 +126,7 @@ html,body{ scroll-behavior: smooth}
 
 .white-header {
   background: unset;
-  background-color: #e8f5e9;
+  background-color: #e2f1e4;
 }
 
 .Header>.fundaraising {
@@ -158,6 +158,12 @@ html,body{ scroll-behavior: smooth}
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+}
+
+.white-header .fundaraising {
+  border: none;
+  background-color: white;
+  color: #2f9e44;
 }
 @media only screen and (max-width: 800px) {
   .logo {
