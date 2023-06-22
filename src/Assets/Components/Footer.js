@@ -8,6 +8,19 @@ import { faGithub, faFacebook, faInstagram, faYoutube } from '@fortawesome/free-
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+    const [email, setEmail] = React.useState('');
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log('Submitted');
+        const data = { email };
+        fetch('http://127.0.0.1:5000/mail', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        }).then(() => {
+            console.log('Posted');
+        })
+    }
     return (
         <footer className="footer">
             <div className="flow__container">
@@ -121,12 +134,14 @@ const Footer = () => {
                         <p className="item__heading">Newsletter</p>
                         <p className="text__block">Hãy nhập Email của bạn để nhận thống báo mới nhất từ chúng tôi !</p>
                         <div className="subcribe__widget">
-                            <div className="widget__input">
-                                <input type="email" name="email" placeholder="Email Address" className="input__panel" />
-                                <div className="send__email">
-                                    <FontAwesomeIcon icon={faEnvelope} />
-                                </div>
-                            </div>
+                            <form className="widget__input" onSubmit={handleSubmit}>
+                                <input type="email" name="email" placeholder="Email Address" className="input__panel" onChange={(e)=> setEmail(e.target.value)} />
+                                <button type="submit" className="send__email" >
+                                    <div>
+                                        <FontAwesomeIcon icon={faEnvelope}/>
+                                    </div>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
