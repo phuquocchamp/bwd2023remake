@@ -1,81 +1,105 @@
-import {memo} from 'react'
-import '../../CSS/News1.css'
+import { memo } from 'react'
+
+import '../../CSS/News.css'
+
+import 'swiper/swiper-bundle.css';
+import 'swiper/css/autoplay';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation, Pagination, Autoplay /*, EffectCoverflow */ } from 'swiper';
+SwiperCore.use([Navigation, Pagination, Autoplay]);
+
 
 const News = (props) => {
+  const imageList = [
+    { img: './PublicAssets/Img/News/ID1.webp', heading: '"Hạnh phúc là trạng thái tâm lý, không phải mục tiêu cuối cùng." - Martin Seligman' },
+    { img: './PublicAssets/Img/News/ID2.webp', heading: '"Sự thay đổi bắt đầu khi bạn quyết định không chấp nhận tình trạng hiện tại."' },
+    { img: './PublicAssets/Img/News/ID3.jpg', heading: '"Hãy hiểu tâm lý của bạn, bạn sẽ hiểu được mọi thứ."' },
+  ];
   return (
     <div className="News">
-      <div className="container">
-    <header>
-    <h1 className="heading-1">the firewing</h1>
-    <div className="sub-heading">
-      <p className="importent">Nature's breath</p>
-    </div>
-    </header>
+      
+      {/* Swiper Image */}
 
-    <div className="main">
-      <div className="home">
-        <div className="left">
-          <img src="/external/image12044-nnxj-700w.png" className="home-img" alt="Paper"></img>
+      <Swiper
+        modules={[Autoplay, Navigation, Pagination]}
+        className="carousel__container"
+        spaceBetween={0}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        effect="coverflow"
+        // autoplay={{ delay: 2500 }} // Tự động chuyển slide sau 3 giây
+        loop
+        style={{ width: '100%', height: '100%' }}
+      >
+        {imageList.map((image, index) => (
+          <SwiperSlide className='swiper__slide' key={index}>
+            <div className="news__header">
+              <h2>{image.heading}</h2>
+            </div>
+            <img src={image.img} alt="news" />
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
-          <h2 className="heading-2">
-          Kon Tum: Xét xử nhóm lâm tặc cưa hạ 147 mét khối gỗ trong rừng tự nhiên
-          </h2>
+      {/* Blog Layout */}     
+
+ 
+      <div className="news__blogs">
+        <div className="left__column">
+
+          <div className="news__card">
+            <h2 className="card__heading">Gửi tôi của nhiều năm về trước</h2>
+            <h5 className="card__description">“Dường như chỉ có tôi, đang một mình dò dẫm trong bóng tối. Cô đơn và tuyệt vọng”</h5>
+            <div className="card__img bg1"></div>
+            <p className="card__text">Hãy tin tớ. Chỉ cần cậu kiên nhẫn, cậu rồi sẽ nhìn thấy lối ra. Lối ra đã ở đó chờ cậu rồi, chỉ cần trái tim cậu sẵn lòng để đón nhận thôi. Bằng cách nào ư? Bằng cách tin tưởng vào chính mình một cách hồn nhiên nhất trong từng khoảnh khắc hiện tại, kể cả khi cậu chưa nắm trong tay bất cứ một bằng chứng nào</p>
+
+          </div>
+
+
+          <div className="news__card">
+            <h2 className="card__heading">Về Nhà - Ngay cả khi đang ở nhà, tớ cũng muốn được "về nhà".</h2>
+            <h5 className="card__description">Tớ hy vọng cậu tìm thấy một ngôi nhà ấm cúng bên trong mình, thay vì ước rằng mình có thể nhiều như thế này hơn hay bớt thế kia đi. </h5>
+            <div className="card__img bg2"></div>
+            <p className="card__text">ớ hy vọng cậu vẫn giữ niềm tin ở bản thân, kể cả khi trước mắt cậu chưa phải là những gì cậu muốn nhìn thấy. Tớ hy vọng cậu vẫn sẽ trân trọng và chăm sóc bản thân khi cậu mệt mỏi hay bất lực. Tớ hy vọng sẽ luôn có những điều tốt đẹp bất ngờ xuất hiện trong cuộc sống của cậu.</p>
+
+          </div>
+
+
         </div>
-
-        <div className="right">
-          <h3 className="heading-3">Tin Mới</h3>
-          <div className="lists">
-            <div className="list">
-              <img src="/external/image62042-qdk6-200h.png" alt="1"></img>
-              <a href='https://thanhnien.vn/vu-khai-thac-rung-trai-phap-luat-o-binh-dinh-co-dau-hieu-toi-pham-185230327140442393.htm'>Vụ khai thác rừng trái pháp luật ở Bình Định: Có dấu hiệu tội phạm</a>
+        <div className="right__column">
+          <div className="news__card">
+            <h2 className="card__heading">About me</h2>
+            <div className="card__img bg3">
             </div>
+            <p className="card__text">Trưởng thành với cậu là gì? </p>      
+          </div>
 
-            <div className="list">
-              <img src="/external/image72042-hs4-200h.png" alt="2"></img>
-              <a href='https://thanhnien.vn/dak-lak-khoi-to-3-bi-can-huy-hoai-gan-2-ha-rung-185230326142440241.htm'>Đắk Lắk: Khởi tố 3 bị can hủy hoại gần 2 ha rừng</a>
-            </div>
+          <div className="news__card">
+            <h3 className="card__section">Popular Post</h3>
+            <div className="card__img bg4"></div>
+            <div className="card__img bg5"></div>
+            <div className="card__img bg6"></div>
+          </div>
 
-            <div className="list">
-              <img src="/external/image82042-ipb-200h.png" alt="3"></img>
-              <a href='https://thanhnien.vn/kien-quyet-tra-lai-dan-di-cu-tu-do-neu-den-dak-nong-song-bat-hop-phap-185230323152601578.htm'>Kiên quyết ‘trả lại’ dân di cư tự do nếu đến Đắk Nông sống bất hợp pháp</a>
-            </div>
 
-            <div className="list">
-              <img src="/external/image102043-2qpf-200h.png" alt="4"></img>
-              <a href='https://thanhnien.vn/khoi-to-vu-pha-rung-tai-khanh-hoa-185230322165220791.htm'>Khởi tố vụ phá rừng tại Khánh Hòa</a>
-            </div>
+          <div className="news__card">
+            <h3 className="card__section">MindMend</h3>
+            <p className="card__text"></p>
           </div>
         </div>
       </div>
 
-      <article>
-        <p>Nhóm lâm tặc vào rừng tự nhiên cưa hạ 84 cây gỗ với tổng khối lượng hơn 147 m3, gây thiệt hại gần 572 triệu đồng.</p>
 
-        <p>Ngày 24.5, TAND H.Sa Thầy (Kon Tum) xét xử sơ thẩm lưu động đối với nhóm lâm tặc cưa hạ 147 m3 gỗ trong rừng tự nhiên.Theo cáo trạng, vào cuối tháng 8.2022, Võ Văn Đức (41 tuổi, trú tại TP.Pleiku, Gia Lai) đã thuê Lê Tiến Thụ (48 tuổi, trú tại Thanh Hóa), Đỗ Văn Long (38 tuổi), Lê Văn Thọ (40 tuổi, cùng trú tại H.Chư Pưh, Gia Lai) cưa hạ gỗ trái phép cho mình.
-          </p>
-          <p> Đến ngày 25.8.2022, Lê Tiến Thụ, Đỗ Văn Long, Lê Văn Thọ đến khoảnh 6, tiểu khu 692 (thuộc lâm phần do Công ty TNHH MTV lâm nghiệp Sa Thầy quản lý) cưa hạ trái phép 84 cây gỗ, với tổng khối lượng 147 m3. Số gỗ này thuộc chủng loại gỗ từ nhóm 3 đến nhóm 8.
-
-Trong lúc phá rừng, nhóm lâm tặc phân chia người cảnh giới và dùng bộ đàm để liên lạc, báo động cho nhau. Chiều 26.8.2022, khi phát hiện cơ quan chức năng đi kiểm tra, nhóm lâm tặc liền tìm đường tẩu thoát.</p>
-
-        <p>Đến ngày 1.9.2022, trong quá trình tuần tra, cơ quan chức năng đã phát hiện 84 cây gỗ bị cưa hạ nên báo cáo sự việc với Công ty TNHH MTV lâm nghiệp Sa Thầy. Sau đó, cơ quan chức năng đã vào cuộc và nhanh chóng điều tra, bắt giữ Lê Tiến Thụ, Đỗ Văn Long, Lê Văn Thọ.
-
-Riêng Võ Văn Đức sau khi sự việc bại lộ đã bỏ trốn khỏi địa phương. </p><p>Hiện Công an H.Sa Thầy đã có lệnh truy nã và quyết định tách vụ án hình sự để tiếp tục điều tra, xác minh, truy bắt bị can Đức. 
-
-</p>
-<p>Việc các bị cáo cưa hạ 84 cây gỗ với tổng khối lượng hơn 147 m3 đã gây thiệt hại với số tiền gần 572 triệu đồng. Kết thúc phiên tòa, HĐXX đã tuyên phạt Lê Tiến Thụ 8 năm tù, Lê Văn Thọ 7 năm tù và Đỗ Văn Long 6 năm 6 tháng tù, cùng về tội vi phạm quy định về khai thác, bảo vệ rừng và lâm sản.</p>
-      </article>
     </div>
-  </div>
-
-
-
-  
-    </div>
-
-
 
   )
 }
 
-export default memo(News)
 
+export default memo(News)
