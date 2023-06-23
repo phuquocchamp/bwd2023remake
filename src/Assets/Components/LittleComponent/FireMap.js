@@ -63,7 +63,7 @@ const Firemap = () => {
       // Initialize the chart
       Highcharts.mapChart(chartContainerRef.current, {
         title: {
-          text: 'Map with multiple geometry types'
+          text: 'FireWing Map'
         },
 
         accessibility: {
