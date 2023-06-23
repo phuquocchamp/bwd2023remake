@@ -47,6 +47,24 @@ function Fundraising() {
     const [email,setEmail] = useState('');
     const [money,setMoney] = useState('');
     const arr=[50,200,500,1000];
+    function handleSubmit(e){
+        e.preventDefault();
+        //console.log(ho,ten,phoneNumber,money,email);
+        const data = {ho,ten,phoneNumber,money,email};
+        //post to server
+        fetch('http://127.0.0.1:5000/donate', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        }).then(() => {
+            console.log('Posted');
+        })
+    }
+
+    function handleMoney(e){
+        e.preventDefault();
+        setMoney(e.target.value);
+    }
     return (
 
         <div>
@@ -68,7 +86,7 @@ function Fundraising() {
                             <p>Chọn mức quyên góp</p>
                             <div className='radiolist'>
                                 {arr.map((money)=>(
-                                    <button key={money}>{money}</button>
+                                    <button key={money} value={money} onClick={handleMoney}>{money}</button>
                                 ))
 
                                 }
