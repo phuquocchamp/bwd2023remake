@@ -8,19 +8,27 @@
 }
 
 .News {
-    /* background-attachment: fixed;
-    background-repeat: no-repeat; */
     height: 100vh;
-    /* background-image: url('../Img/Background/newsPage.jpg'); */
-    /* background-position: fixed; */
+    background-position: fixed; 
+    background-size: cover;
     height: 100vh;
     width: 100%;
-    /* display: flex; */
     align-items: center;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 100%;
 }
+
+.News .intro-img {
+    height: 100vh;
+    width: 100%;
+    background: url("../Img/newsPage.jpg");
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+    transition: 0.5s;
+  }
 
 
 .carousel__container {
@@ -30,34 +38,6 @@
     height: 77% !important;
 }
 
-.swiper__slide {
-    position: relative;
-    width: 100%;
-}
-
-.swiper__slide img {
-    filter: blur(5px);
-    -webkit-filter: blur(7px);
-
-    max-width: auto;
-    height: 100%;
-    object-fit: cover;
-    background-position: center;
-    width: 100%;
-}
-
-.news__header {
-    background-color: #757a8877;
-    color: rgb(24, 181, 47);
-    font-size: 1.5em;
-    border-radius: 15px;
-    position: absolute;
-    align-items: center;
-    z-index: 99;
-
-
-    /* padding: 3e; */
-}
 
 /* News Blogs */
 
@@ -68,24 +48,27 @@
     width: 80%;
     margin-bottom: 5px !important;
     text-align: center;
-    background-color: #64888d75;
+    background-color: #444444b1;
     border-radius: 15px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     text-align: center;
     align-items: center;
+    backdrop-filter: blur(5px);
 }
 
 
 .bg1 {
-    /* background-image: url(../Img/Blogs/1.jpg) !important; */
+    background-image: url('../Img/ID1.webp') !important;
     object-fit: cover !important;
     background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .bg2 {
-    /* background-image: url(../Img/Blogs/2.jpg) !important; */
+    background-image: url('../Img/ID2.webp') !important;
     object-fit: contain !important;
     /* background-position: center; */
     background-size: cover;

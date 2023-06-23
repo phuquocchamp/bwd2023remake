@@ -2,71 +2,42 @@ import { memo } from 'react'
 
 import '../../CSS/News.css'
 
-import 'swiper/swiper-bundle.css';
-import 'swiper/css/autoplay';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Pagination, Autoplay /*, EffectCoverflow */ } from 'swiper';
-SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 
 const News = (props) => {
-  const imageList = [
-    { img: './PublicAssets/Img/News/ID1.webp', heading: '"Hạnh phúc là trạng thái tâm lý, không phải mục tiêu cuối cùng." - Martin Seligman' },
-    { img: './PublicAssets/Img/News/ID2.webp', heading: '"Sự thay đổi bắt đầu khi bạn quyết định không chấp nhận tình trạng hiện tại."' },
-    { img: './PublicAssets/Img/News/ID3.jpg', heading: '"Hãy hiểu tâm lý của bạn, bạn sẽ hiểu được mọi thứ."' },
-  ];
   return (
     <div className="News">
-      
-      {/* Swiper Image */}
-
-      <Swiper
-        modules={[Autoplay, Navigation, Pagination]}
-        className="carousel__container"
-        spaceBetween={0}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        effect="coverflow"
-        // autoplay={{ delay: 2500 }} // Tự động chuyển slide sau 3 giây
-        loop
-        style={{ width: '100%', height: '100%' }}
-      >
-        {imageList.map((image, index) => (
-          <SwiperSlide className='swiper__slide' key={index}>
-            <div className="news__header">
-              <h2>{image.heading}</h2>
-            </div>
-            <img src={image.img} alt="news" />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-
-      {/* Blog Layout */}     
+          <div className='intro-img'></div>
 
  
-      <div className="news__blogs">
+      <div className="news__blogs" style={{marginTop:'200px'}}>
         <div className="left__column">
 
           <div className="news__card">
-            <h2 className="card__heading">Gửi tôi của nhiều năm về trước</h2>
-            <h5 className="card__description">“Dường như chỉ có tôi, đang một mình dò dẫm trong bóng tối. Cô đơn và tuyệt vọng”</h5>
+            <h2 className="card__heading">Cháy rừng vượt tầm kiểm soát ở Tây Ban Nha</h2>
+            <h5 className="card__description">VTV.vn - Hơn 500 người đã phải sơ tán khi các đám cháy rừng lan rộng, vượt tầm kiểm soát ở phía Tây của Tây Ban Nha, khu vực giáp biên giới Bồ Đào Nha.</h5>
             <div className="card__img bg1"></div>
-            <p className="card__text">Hãy tin tớ. Chỉ cần cậu kiên nhẫn, cậu rồi sẽ nhìn thấy lối ra. Lối ra đã ở đó chờ cậu rồi, chỉ cần trái tim cậu sẵn lòng để đón nhận thôi. Bằng cách nào ư? Bằng cách tin tưởng vào chính mình một cách hồn nhiên nhất trong từng khoảnh khắc hiện tại, kể cả khi cậu chưa nắm trong tay bất cứ một bằng chứng nào</p>
+            <p className="card__text">Đám cháy đã thiêu rụi ít nhất 1500 ha rừng, hàng trăm lính cứu hỏa được điều động. Tuy nhiên thời tiết khô hanh và gió lớn khiến việc dập lửa rất khó khăn.
+
+Giới chức địa phương cho biết, nhiều khả năng vụ cháy rừng này là hành động có chủ ý, tuy nhiên không cho biết thêm thông tin chi tiết.
+
+Năm ngoái, Tây Ban Nha ghi nhận gần 500 vụ cháy rừng, con số cao kỷ lục.</p>
 
           </div>
 
 
           <div className="news__card">
-            <h2 className="card__heading">Về Nhà - Ngay cả khi đang ở nhà, tớ cũng muốn được "về nhà".</h2>
-            <h5 className="card__description">Tớ hy vọng cậu tìm thấy một ngôi nhà ấm cúng bên trong mình, thay vì ước rằng mình có thể nhiều như thế này hơn hay bớt thế kia đi. </h5>
+            <h2 className="card__heading">Cháy rừng lan rộng ở miền Tây Canada</h2>
+            <h5 className="card__description">VTV.vn - Các đám cháy rừng lan rộng ở tỉnh Alberta, miền Tây Canada đang gây tác động xấu đến chất lượng không khí, ảnh hưởng đến hoạt động khai thác dầu.</h5>
             <div className="card__img bg2"></div>
-            <p className="card__text">ớ hy vọng cậu vẫn giữ niềm tin ở bản thân, kể cả khi trước mắt cậu chưa phải là những gì cậu muốn nhìn thấy. Tớ hy vọng cậu vẫn sẽ trân trọng và chăm sóc bản thân khi cậu mệt mỏi hay bất lực. Tớ hy vọng sẽ luôn có những điều tốt đẹp bất ngờ xuất hiện trong cuộc sống của cậu.</p>
+            <p className="card__text">Chất lượng không khí kém, tầm nhìn giảm do thời tiết khô hanh, trong khi gió đổi chiều làm tăng nguy cơ cháy rừng lan rộng.
+
+Các đám cháy rừng ở Alberta buộc các nhà sản xuất dầu mỏ và khí đốt phải tạm ngừng hoạt động một số cơ sở, làm giảm sản lượng tương đương 319.000 thùng dầu/ngày.
+
+Giá dầu thô nặng của Canada đã tăng lên các mức cao do những quan ngại về các vụ cháy rừng.
+
+Chính quyền tỉnh Alberta cho biết, trên toàn tỉnh đang xảy ra khoảng 90 vụ cháy rừng, trong đó 23 vụ ngoài tầm kiểm soát, buộc khoảng 20.000 người dân phải sơ tán.</p>
 
           </div>
 
@@ -74,10 +45,10 @@ const News = (props) => {
         </div>
         <div className="right__column">
           <div className="news__card">
-            <h2 className="card__heading">About me</h2>
+            <h2 className="card__heading"></h2>
             <div className="card__img bg3">
             </div>
-            <p className="card__text">Trưởng thành với cậu là gì? </p>      
+            <p className="card__text"> </p>      
           </div>
 
           <div className="news__card">
@@ -89,7 +60,7 @@ const News = (props) => {
 
 
           <div className="news__card">
-            <h3 className="card__section">MindMend</h3>
+            <h3 className="card__section">FireWing</h3>
             <p className="card__text"></p>
           </div>
         </div>

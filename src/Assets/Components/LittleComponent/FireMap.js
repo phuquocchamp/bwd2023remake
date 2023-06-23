@@ -41,7 +41,7 @@ const Firemap = () => {
         if (state.properties.code_hasc === 'AU.TS') {
           state.dataLabels = {
             style: {
-              color: '#333333'
+              color: 'orangered'
             }
           };
         }
@@ -142,7 +142,7 @@ const Firemap = () => {
     renderMap();
   }, []);
 
-  return <div ref={chartContainerRef}></div>;
+  return <div ref={chartContainerRef} style={{position:'relative',height:'90vh',width:'100%',top:'140px',marginBottom:'200px'}}></div>;
 };
 
 export default Firemap;
