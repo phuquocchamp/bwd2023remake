@@ -158,13 +158,22 @@ html,body{ scroll-behavior: smooth}
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+  transition: 200ms;
 }
 
 .white-header .fundaraising {
   border: none;
-  background-color: white;
+  background-color: rgba(248, 248, 248, 0.697);
   color: #2f9e44;
 }
+
+.mobile-nav .fundaraising {
+  width: unset;
+  padding-left: 20px;
+  color: #0f4229;
+  background-color: unset;
+}
+
 @media only screen and (max-width: 800px) {
   .logo {
     margin-left: unset;

@@ -57,13 +57,27 @@ function Fundraising() {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)
-        }).then((response) => {console.log(response)})
+        }).then((response) => {console.log(response); alert("Thành công")})
+        .then(()=>{updateTotal()});
     }
+
+    function updateTotal() {
+        fetch('http://127.0.0.1:5000/getDonations')
+        .then((response)=>response.json())
+        .then((res)=>{setTotal(res.reduce((overall,curr)=>(overall+curr.money),0))})
+        .then(()=>{console.log(total)});
+    }
+    const [total,setTotal] =useState(0);
+    updateTotal();
 
     function handleMoney(e){
         e.preventDefault();
         setMoney(e.target.value*1000);
     }
+
+    function numberWithDot(number) {
+        return number.toLocaleString().replace(/,/g, ".");
+      }
     return (
 
         <div>
@@ -96,10 +110,13 @@ function Fundraising() {
                 
                 </div>
                 </AnimatedLeftToRight>
-
-                <br></br> <br></br> <br></br> 
+                <AnimatedRightToLeft>
+                <div className='total'>
+                    <h2>Số tiền quyên góp được</h2>
+                    <h1>{numberWithDot(total)}<br></br>VND</h1>
+                </div>
+                </AnimatedRightToLeft>
             </div>
-
 
         </div>
     );
