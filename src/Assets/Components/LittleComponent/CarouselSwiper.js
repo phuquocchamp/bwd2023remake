@@ -67,7 +67,7 @@ const CarouselSwiper = () => {
             navigation
             pagination={{ clickable: true }}
             effect="coverflow"
-            // autoplay={{ delay: 2500 }} // Tự động chuyển slide sau 3 giây
+            autoplay={{ delay: 2500 }} // Tự động chuyển slide sau 3 giây
             loop
         >
             {members.map((member) => (
