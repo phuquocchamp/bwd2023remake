@@ -1,6 +1,7 @@
 import { memo, useState } from 'react'
 import '../../CSS/Fundraising.css';
 import { useInView } from 'react-intersection-observer';
+import { json } from 'react-router-dom';
 
 
 const AnimatedLeftToRight = ({ children }) => {
@@ -56,9 +57,7 @@ function Fundraising() {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)
-        }).then(() => {
-            console.log('Posted');
-        })
+        }).then((response) => {console.log(response)})
     }
 
     function handleMoney(e){
@@ -86,7 +85,7 @@ function Fundraising() {
                             <p>Chọn mức quyên góp</p>
                             <div className='radiolist'>
                                 {arr.map((amount)=>(
-                                    <button key={amount} value={amount} onClick={handleMoney} className={amount*1000==money?'selected':''}>{amount}k</button>
+                                    <button key={amount} value={amount} onClick={handleMoney} className={amount*1000===money?'selected':''}>{amount}k</button>
                                 ))
 
                                 }

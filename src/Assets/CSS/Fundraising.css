@@ -155,12 +155,18 @@
     text-transform: uppercase;
     font-weight: bold;
     color: #01c20a;
+    padding-bottom: 20px;
+}
+
+.fundraising .container .head-text {
+    padding-bottom: 10px;
 }
 
 .fundraising .main-form {
     display: flex;
     flex-direction: column;
     width: 80%;
+    max-width: 900px;
     margin: auto;
     align-items: center;
     justify-content: space-around;
@@ -201,15 +207,14 @@
     border-radius: 10px;
     cursor: pointer;
     font-size: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.642);
+    background-color: #00cc0a5b;
     font-weight: bold;
     transition: 0.3s;
-    color: #000000e3;
+    color: rgba(255, 255, 255, 0.653);
 }
 
 .fundraising .main-form >button:hover {
     background-color:#2f9e44; 
-    color: rgba(255, 255, 255, 0.653);
 }
 
 
@@ -291,6 +296,7 @@
 }
 
 .fundraising .main-form >button {
+    width: 90%;
     height: 2rem;
     font-size: 1rem;
     border-radius: 3px;
@@ -322,6 +328,18 @@
     .fundraising .contact{
         padding-bottom: 150px;
     }
+
+    .fundraising .flname {
+        flex-direction: column;
+    }
+
+    .fundraising .flname>input {
+        width: 100%;
+    }
+    .fundraising .flname>input:first-child {
+        margin-bottom: 10px;
+    }
+
     .fundraising .right-text {
       width: 100%;
       text-align: center;
