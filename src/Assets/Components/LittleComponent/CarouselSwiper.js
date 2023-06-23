@@ -49,7 +49,8 @@ const CarouselSwiper = () => {
             id: 4,
             name: 'Nguyễn Phú Thịnh',
             studentId: '22IT280',
-            introduction: 'Sinh viên là những người trẻ tuổi tràn đầy nhiệt huyết và trách nhiệm, họ có trách nhiệm bảo vệ rừng để gìn giữ cho tương lai của chúng ta xanh tươi và bền vững hơn..',
+            introduction:
+                'Sinh viên là những người trẻ tuổi tràn đầy nhiệt huyết và trách nhiệm, họ có trách nhiệm bảo vệ rừng để gìn giữ cho tương lai của chúng ta xanh tươi và bền vững hơn..',
             facebook: 'https://www.facebook.com/ting12q',
             github: 'https://github.com/vkutin12q',
             avatar: 'external/tin12q.jpg',
@@ -60,18 +61,18 @@ const CarouselSwiper = () => {
     return (
         <Swiper
             modules={[Autoplay, Navigation, Pagination]}
-            className="carousel__container"
+            className="carousel__container__aboutus"
             spaceBetween={0}
             slidesPerView={1}
             navigation
             pagination={{ clickable: true }}
             effect="coverflow"
-            autoplay={{ delay: 2500 }} // Tự động chuyển slide sau 3 giây
+            // autoplay={{ delay: 2500 }} // Tự động chuyển slide sau 3 giây
             loop
         >
             {members.map((member) => (
                 <SwiperSlide key={member.id}>
-                    <div className="carousel__slide">
+                    <div className="carousel__item">
                         <div className="avatar">
                             <img src={member.avatar} alt="Avatar" />
                         </div>
