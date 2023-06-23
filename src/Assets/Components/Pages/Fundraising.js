@@ -45,7 +45,26 @@ function Fundraising() {
     const [ten,setTen] = useState('');
     const [phoneNumber,setPhoneNumber] = useState('');
     const [email,setEmail] = useState('');
+    const [money,setMoney] = useState('');
     const arr=[50,200,500,1000];
+    function handleSubmit(e){
+        e.preventDefault();
+        //console.log(ho,ten,phoneNumber,money,email);
+        const data = {ho,ten,phoneNumber,money,email};
+        //post to server
+        fetch('http://127.0.0.1:5000/donate', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        }).then(() => {
+            console.log('Posted');
+        })
+    }
+
+    function handleMoney(e){
+        e.preventDefault();
+        setMoney(e.target.value);
+    }
     return (
 
         <div>
@@ -56,6 +75,7 @@ function Fundraising() {
                     <h1 className='title'> Quyên góp</h1>
                     <h1 className='head-text'>QUỸ TRỒNG RỪNG VKU</h1>
                     <h3>Hãy đồng hành cùng chúng tôi bảo vệ rừng và đa dạng sinh học trên hành tinh.</h3>
+                    <form onSubmit={handleSubmit}>
                     <div className='main-form'>
                         <div className='flname'>
                             <input type='text' placeholder='Họ' onChange={e=>setHo(e.target.value)} value={ho} required/>
@@ -66,13 +86,14 @@ function Fundraising() {
                             <p>Chọn mức quyên góp</p>
                             <div className='radiolist'>
                                 {arr.map((money)=>(
-                                    <button key={money}>{money}</button>
+                                    <button key={money} value={money} onClick={handleMoney}>{money}</button>
                                 ))
 
                                 }
                             </div>
-                            <button type='button' onClick={()=>{console.log(1)}}>Quyên góp</button>
+                            <button type='submit'>Quyên góp</button>
                     </div>
+                    </form>
                 
                 </div>
                 </AnimatedLeftToRight>
