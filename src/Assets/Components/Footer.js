@@ -8,6 +8,19 @@ import { faGithub, faFacebook, faInstagram, faYoutube } from '@fortawesome/free-
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+    const [email, setEmail] = React.useState('');
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log('Submitted');
+        const data = { email };
+        fetch('http://127.0.0.1:5000/mail', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        }).then(() => {
+            console.log('Posted');
+        })
+    }
     return (
         <footer className="footer">
             <div className="flow__container">

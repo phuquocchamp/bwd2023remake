@@ -56,11 +56,15 @@ function Header() {
   const [link4, setLink4] = useState(
     window.location.pathname.includes("/about-us") ? "curr-page" : ""
   );
+  const [link5, setLink5] = useState(
+    window.location.pathname.includes("/fire-map") ? "curr-page" : ""
+  );
   useEffect(() => {
     setLink1("/" === window.location.pathname ? "curr-page" : "");
     setLink2(window.location.pathname.includes("/News") ? "curr-page" : "");
     setLink3(window.location.pathname.includes("/Report") ? "curr-page" : "");
     setLink4(window.location.pathname.includes("/about-us") ? "curr-page" : "");
+    setLink5(window.location.pathname.includes("/fire-map") ? "curr-page" : "");
     window.scrollTo(0, 0);
   }, [CurrLink]);
   return (
@@ -99,6 +103,13 @@ function Header() {
             <Link to="/about-us" className={link4}>
               Về chúng tôi
             </Link>
+            
+          </li>
+          <li key="5">
+            <Link to="/fire-map" className={link5}>
+              FireMap
+            </Link>
+            
           </li>
         </ul>
 
@@ -126,6 +137,11 @@ function Header() {
             </Link>
           </li>
           <li key="5" onClick={handleBar}>
+            <Link to="/fire-map" className={link5}>
+              FireMap
+            </Link>
+          </li>
+          <li key="6" onClick={handleBar}>
           <Link to="/fundaraising" className="fundaraising">Đóng góp</Link>
           </li>
         </ul>

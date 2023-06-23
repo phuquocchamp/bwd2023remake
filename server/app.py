@@ -1,9 +1,12 @@
 from flask import Flask, request, jsonify
 import json
 import requests
+import flask_cors as cors
 
 
 app = Flask(__name__)
+#add cors
+cors.CORS(app)
 #header = {'Content-Type': 'application/json'}
 header = {'Content-Type': 'application/json', 'Accept': 'application/json'}
 @app.route('/donate', methods=['POST'])
@@ -14,6 +17,44 @@ def donate():
         json.dump(data, f)
         f.write('\n')
     response = jsonify({'message': 'Donation received!'})
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+    response.headers.add('Content-Type', 'application/json')
+
+    return response
+@app.route('/mail', methods=['POST'])
+def mail():
+    data = request.get_json()
+    with open('mail.json', 'a') as f:
+        json.dump(data, f)
+        f.write('\n')
+    response = jsonify({'message': 'Mail received!'})
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+    response.headers.add('Content-Type', 'application/json')
+
+    return response
+
+@app.route('/getDonations', methods=['GET'])
+def getDonations():
+    with open('donations.json', 'r') as f:
+        data = f.readlines()
+        data = list(map(json.loads, data))
+    response = jsonify(data)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+    response.headers.add('Content-Type', 'application/json')
+
+    return response
+@app.route('/getMails', methods=['GET'])
+def getMails():
+    with open('mail.json', 'r') as f:
+        data = f.readlines()
+        data = list(map(json.loads, data))
+    response = jsonify(data)
     response.headers.add('Access-Control-Allow-Origin', '*')
     response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
     response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
