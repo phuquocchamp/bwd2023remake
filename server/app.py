@@ -36,5 +36,31 @@ def mail():
     response.headers.add('Content-Type', 'application/json')
 
     return response
+
+@app.route('/getDonations', methods=['GET'])
+def getDonations():
+    with open('donations.json', 'r') as f:
+        data = f.readlines()
+        data = list(map(json.loads, data))
+    response = jsonify(data)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+    response.headers.add('Content-Type', 'application/json')
+
+    return response
+@app.route('/getMails', methods=['GET'])
+def getMails():
+    with open('mail.json', 'r') as f:
+        data = f.readlines()
+        data = list(map(json.loads, data))
+    response = jsonify(data)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+    response.headers.add('Content-Type', 'application/json')
+
+    return response
+
 if __name__ == '__main__':
     app.run(debug=True)
