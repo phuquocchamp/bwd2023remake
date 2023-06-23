@@ -65,7 +65,7 @@ const Footer = () => {
                 <div className="info__container">
                     {/* About Us Panel */}
                     <div className="item__panel aboutus__section">
-                        <p className="item__heading">About Us</p>
+                        <p className="item__heading">Về chúng tôi</p>
                         <p className="text__block">
                             FireWing giúp người dùng nắm bắt và cập nhật các thông tin về cháy rừng, bao gồm tình hình
                             hiện tại, dự báo, đánh giá nguy cơ cháy rừng.
@@ -92,7 +92,7 @@ const Footer = () => {
 
                     {/* Explore Panel */}
                     <div className="item__panel second__panel left__spacing">
-                        <p className="item__heading">Explore</p>
+                        <p className="item__heading">Điều hướng</p>
                         <ul className="item__menu">
                             <li>
                                 <Link to="/">Trang Chủ</Link>
@@ -111,7 +111,7 @@ const Footer = () => {
                     </div>
 
                     <div className="item__panel top__spacing third__panel">
-                        <p className="item__heading">Hotline</p>
+                        <p className="item__heading">Đường dây nóng</p>
                         <ul className="item__menu">
                             <li>
                                 <a href="">114</a>
@@ -131,7 +131,7 @@ const Footer = () => {
 
                     {/* Newslatter */}
                     <div className="item__panel left__spacing top__spacing">
-                        <p className="item__heading">Newsletter</p>
+                        <p className="item__heading">Hòm thư</p>
                         <p className="text__block">Hãy nhập Email của bạn để nhận thống báo mới nhất từ chúng tôi !</p>
                         <div className="subcribe__widget">
                             <div className="widget__input">
