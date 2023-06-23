@@ -198,6 +198,7 @@
     padding: auto;
     padding-left: 2rem;
     background-color: rgba(235, 255, 231, 0.551);
+    color: rgba(61, 61, 61, 0.844);
 }
 
 .fundraising .main-form >button {

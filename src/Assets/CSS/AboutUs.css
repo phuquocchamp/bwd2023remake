@@ -102,8 +102,7 @@ a {
     .container__description {
         font-size: 0.9rem;
     }
-
-    .cards__container {
-        height: auto;
+    .carousel__item {
+        margin-top: 0;
     }
 }
