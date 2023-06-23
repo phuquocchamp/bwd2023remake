@@ -36,8 +36,8 @@
 }
 
 .fundraising .container {
-    height: 80vh;
-    margin-top: 200px;
+    height: 82vh;
+    margin-top: 100px;
 }
 
 .fundraising .left-text{
@@ -264,6 +264,7 @@
 
     .fundraising .container .title {
         font-size: 2rem;
+        margin: 0;
     }
 
     .fundraising .container>.head-text {
@@ -352,7 +353,6 @@
         height: 2.5rem;
         border-radius: 3px;
         font-size: 1rem;
-        padding-left: 1rem;
     }
     .fundraising .main-form .radiolist >button {
         height: 2rem;
