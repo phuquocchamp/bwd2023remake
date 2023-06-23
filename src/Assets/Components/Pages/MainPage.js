@@ -74,7 +74,7 @@ function MainPage() {
         <div className='contact-content-pane'>
           <div>
             <h1>Chúng tôi là ai</h1>
-            <p>Chúng tôi là một nhóm sinh viên đến từ VKU. Phát triển dự án FireWing với mục tiêu cung cấp thông tin và dự báo về cháy rừng sử dụng công nghệ AI.</p>
+            <p>Chúng tôi là một nhóm sinh viên đến từ VKU. Phát triển dự án FireWing với mục tiêu cung cấp thông tin và dự báo về cháy rừng.</p>
 
           </div>
           <Link to='/about-us'>Tìm hiểu thêm</Link>

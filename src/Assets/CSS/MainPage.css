@@ -47,7 +47,7 @@
 }
 
 .intro-page .intro-contentpane h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   text-align: center;
   padding-left: 16px;
   text-transform: uppercase;
@@ -249,7 +249,7 @@ transition: .3s ease-in;
   }
   .prevention-page .prevention-content-pane > a,
   .contact-page .contact-content-pane>a {
-    margin: inherit auto;
+    margin: inherit 0;
     width: 100%;
   
   }

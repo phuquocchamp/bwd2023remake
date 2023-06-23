@@ -40,7 +40,7 @@ a {
 
 /* Project info */
 .container__info {
-    padding: 20px;
+    padding: 15px;
     margin-top: 5vh;
     width: 80%;
     padding: 5%;
@@ -92,7 +92,7 @@ a {
 
     .container__info {
         width: 100%;
-        padding: 10px;
+        padding: 7px;
     }
 
     .container__title {

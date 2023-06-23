@@ -78,7 +78,7 @@ const Footer = () => {
                     </div>
 
                     {/* Explore Panel */}
-                    <div className="item__panel second__panel">
+                    <div className="item__panel second__panel left__spacing">
                         <p className="item__heading">Explore</p>
                         <ul className="item__menu">
                             <li>
@@ -97,7 +97,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div className="item__panel">
+                    <div className="item__panel top__spacing third__panel">
                         <p className="item__heading">Hotline</p>
                         <ul className="item__menu">
                             <li>
@@ -117,15 +117,13 @@ const Footer = () => {
                     </div>
 
                     {/* Newslatter */}
-                    <div className="item__panel">
+                    <div className="item__panel left__spacing top__spacing">
                         <p className="item__heading">Newsletter</p>
                         <p className="text__block">Hãy nhập Email của bạn để nhận thống báo mới nhất từ chúng tôi !</p>
                         <div className="subcribe__widget">
                             <div className="widget__input">
                                 <input type="email" name="email" placeholder="Email Address" className="input__panel" />
-                                <div className="send__email">
-                                    <FontAwesomeIcon icon={faEnvelope} />
-                                </div>
+                                <div className="send__email">{/* <FontAwesomeIcon icon={faEnvelope} /> */}</div>
                             </div>
                         </div>
                     </div>
