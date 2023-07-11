@@ -29,6 +29,7 @@
   background-color: rgba(255, 255, 255, 0.579);
   transition: 0.5s;
   position: relative;
+  top:0;
 }
 
 .news-component > a > img {
@@ -51,7 +52,7 @@
   background-color:rgba(255, 255, 255, 0.479);
   color: rgb(104, 104, 104);
   
-  top: -2px;
+  top: -5px;
 }
 
 
