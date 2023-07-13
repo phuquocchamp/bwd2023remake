@@ -23,7 +23,7 @@ const Footer = () => {
     }
     return (
         <footer className="footer">
-            <div className="flow__container">
+            {/* <div className="flow__container">
                 <div className="logo__footer">FireWing</div>
                 <div className="contact__info">
                     <div className="contact__item location__item">
@@ -60,7 +60,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <div className="fixed__container">
                 <div className="info__container">
                     {/* About Us Panel */}
