@@ -81,8 +81,15 @@ svg.addEventListener('touchend', endPan);
 let circles = document.querySelectorAll('.fire');
 circles.forEach(circle => {
     circle.style.fill = 'rgba(255, 0, 0, 0.55)';
-    circle.style.r=0.5/currentScale+'vw';
+    circle.style.r=20/currentScale+'px';
     svg.addEventListener('wheel',()=>{
-        circle.style.r=0.5/currentScale+'vw';
+        circle.style.r=20/currentScale+'px';
+    });
+    plus.addEventListener('click',()=>{
+        circle.style.r=20/currentScale+'px';
+    });
+    
+    minus.addEventListener('click',()=>{
+        circle.style.r=20/currentScale+'px';
     });
 });

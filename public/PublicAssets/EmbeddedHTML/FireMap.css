@@ -25,13 +25,24 @@ body svg {
     }
 }
 
+.bgd {
+    position: fixed;
+    right: auto;
+    left: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
 .bg {
     margin: auto;
     padding: auto;
     display: flex;
     justify-content: space-between;
-    max-width: 200px;
+    width: 200px;
     height: 40px;
+    
 }
 .bg>* {
     width: 49%;
