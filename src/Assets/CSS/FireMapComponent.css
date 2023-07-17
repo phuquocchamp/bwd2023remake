@@ -1,0 +1,13 @@
+.fire-map-component .title {
+    text-align: center;
+    margin: 50px;
+    text-transform: uppercase;
+    color: #003300;
+    font-size: 2.5rem;
+}
+
+@media only screen and (max-width: 800px) {
+    .fire-map-component .title {
+        font-size: 1.5rem;
+    }
+}

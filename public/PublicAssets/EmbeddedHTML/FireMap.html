@@ -15,16 +15,46 @@
 		}
 		body svg {
 			position: absolute;
-			top: -300px;
+			top: -800px;
+			transform: scale(0.6);
 		}
+
+		@media only screen and (max-width: 800px) {
+			body svg {
+				top: 0;
+			}
+		}
+
+		.bg {
+			margin: auto;
+			padding: auto;
+			display: flex;
+			justify-content: space-between;
+			max-width: 200px;
+			height: 40px;
+		}
+		.bg>* {
+			width: 49%;
+			height: 40px;
+			font-weight: bold;
+			border: none;
+			background-color: #A1D07D;
+			border-radius: 10px;
+			color: #13794a;
+			font-size: 2rem;
+			z-index: 99;
+		}
+
 	</style>
 </head>
 <body>
+	<div class="bg"><button id="plus">+</button><button id="minus">-</button></div>
     
 <!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 595.28 841.89" style="enable-background:new 0 0 595.28 841.89;" xml:space="preserve">
 <style type="text/css">
+	*{transition: 100ms;}
 	.st0{fill:#AFD793;}
 	.st0:hover{fill:#13794a}
 	.st1{fill:#A1D07D;}
@@ -76,56 +106,85 @@
 <path class="st2" d="M295.09,309.32"/>
 </svg>
 <script>
-	const svg = document.querySelector('svg');
-	let currentScale = 1;
-	let currentTranslateX = 0;
-	let currentTranslateY = 0;
-	let isPanning = false;
-	let startPanX, startPanY;
+const svg = document.querySelector('svg');
+let currentScale = 0.6;
+let currentTranslateX = 0;
+let currentTranslateY = 0;
+let isPanning = false;
+let startPanX, startPanY;
+const plus=document.querySelector('#plus');
+const minus=document.querySelector('#minus');
+plus.addEventListener('click',()=>{
+	currentScale +=0.5;
+	updateTransform();
+	console.log(currentScale);
+});
 
-	function zoom(event) {
-	  event.preventDefault();
+minus.addEventListener('click',()=>{
+	currentScale -=0.5;
+	updateTransform();
+	console.log(currentScale);
+});
 
-	  if (event.deltaY < 0) {
-		// Zoom in
-		currentScale += 0.1;
-	  } else {
-		// Zoom out
-		currentScale -= 0.1;
-	  }
+function zoom(event) {
+  event.preventDefault();
 
-	  updateTransform();
-	}
+  if (event.deltaY < 0) {
+    // Zoom in
+    currentScale += 0.2;
+  } else {
+    // Zoom out
+    currentScale -= 0.2;
+  }
 
-	function startPan(event) {
-	  isPanning = true;
-	  startPanX = event.clientX;
-	  startPanY = event.clientY;
-	}
+  updateTransform();
+}
 
-	function pan(event) {
-	  if (isPanning) {
-		currentTranslateX += event.clientX - startPanX;
-		currentTranslateY += event.clientY - startPanY;
-		startPanX = event.clientX;
-		startPanY = event.clientY;
+function startPan(event) {
+  isPanning = true;
+  if (event.type === 'mousedown') {
+    startPanX = event.clientX;
+    startPanY = event.clientY;
+  } else {
+    startPanX = event.touches[0].clientX;
+    startPanY = event.touches[0].clientY;
+  }
+}
 
-		updateTransform();
-	  }
-	}
+function pan(event) {
+	event.preventDefault();
+  if (isPanning) {
+    if (event.type === 'mousemove') {
+      currentTranslateX += event.clientX - startPanX;
+      currentTranslateY += event.clientY - startPanY;
+      startPanX = event.clientX;
+      startPanY = event.clientY;
+    } else {
+      currentTranslateX += event.touches[0].clientX - startPanX;
+      currentTranslateY += event.touches[0].clientY - startPanY;
+      startPanX = event.touches[0].clientX;
+      startPanY = event.touches[0].clientY;
+    }
 
-	function endPan() {
-	  isPanning = false;
-	}
+    updateTransform();
+  }
+}
 
-	function updateTransform() {
-	  svg.style.transform = `translate(${currentTranslateX}px, ${currentTranslateY}px) scale(${currentScale})`;
-	}
+function endPan() {
+  isPanning = false;
+}
 
-	svg.addEventListener('wheel', zoom);
-	svg.addEventListener('mousedown', startPan);
-	svg.addEventListener('mousemove', pan);
-	svg.addEventListener('mouseup', endPan);
+function updateTransform() {
+  svg.style.transform = `translate(${currentTranslateX}px, ${currentTranslateY}px) scale(${currentScale})`;
+}
+
+svg.addEventListener('wheel', zoom);
+svg.addEventListener('mousedown', startPan);
+svg.addEventListener('mousemove', pan);
+svg.addEventListener('mouseup', endPan);
+svg.addEventListener('touchstart', startPan);
+svg.addEventListener('touchmove', pan);
+svg.addEventListener('touchend', endPan);
   </script>
 </body>
 </html>
