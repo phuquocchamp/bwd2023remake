@@ -17,7 +17,7 @@ function AboutUs() {
                         FireWing - Cung cấp thông tin, dự báo cháy rừng
                     </h1>
                     <p className="container__description">
-                        FireWing là một trang web được phát triển bởi các sinh viên VKU với mục tiêu cung cấp thông tin
+                        FireWing là một nền tảng được phát triển bởi các sinh viên VKU với mục tiêu cung cấp thông tin
                         và dự báo về cháy rừng.
                     </p>
                     <p className="container__description">

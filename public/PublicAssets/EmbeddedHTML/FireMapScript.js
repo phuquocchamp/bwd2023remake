@@ -9,13 +9,11 @@ const minus=document.querySelector('#minus');
 plus.addEventListener('click',()=>{
 	currentScale +=0.5;
 	updateTransform();
-	console.log(currentScale);
 });
 
 minus.addEventListener('click',()=>{
 	currentScale -=0.5;
 	updateTransform();
-	console.log(currentScale);
 });
 
 function zoom(event) {
@@ -23,10 +21,10 @@ function zoom(event) {
 
   if (event.deltaY < 0) {
     // Zoom in
-    currentScale += 0.2;
+    currentScale *= 1.1;
   } else {
     // Zoom out
-    currentScale -= 0.2;
+    currentScale *= 0.9;
   }
 
   updateTransform();
@@ -93,3 +91,17 @@ circles.forEach(circle => {
         circle.style.r=20/currentScale+'px';
     });
 });
+
+let locations=document.querySelectorAll('.st3');
+locations.forEach((location)=>{
+  location.addEventListener('click',()=>{
+    let locationbox=document.querySelector('#'+location.id+'-box');
+    if(locationbox.classList.contains('none')) {
+      locationbox.classList.remove('none');
+      locationbox.querySelector('.exit').onclick=function () {
+        locationbox.classList.add('none');
+      }
+    }
+
+  })
+})
