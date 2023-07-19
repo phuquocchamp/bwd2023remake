@@ -17,6 +17,12 @@ body svg .st3 {
     cursor: pointer;
 }
 
+body .chart-container {
+    position: relative;
+    height: 80%;
+    width: 80%;
+  }
+
 @media only screen and (max-width: 1300px) {
     body svg {
     top: -40vh;

@@ -103,5 +103,78 @@ locations.forEach((location)=>{
       }
     }
 
-  })
-})
+  });
+});
+
+let ChartData=[
+  {
+    id:1,
+    temperature:25,
+    humidity:88,
+    timestamp: "2023-07-18T16:58:59.096Z"
+  },
+  {
+    id:2,
+    temperature:24,
+    humidity:68,
+    timestamp: "2023-07-18T17:58:59.096Z"
+  },
+  {
+    id:3,
+    temperature:26,
+    humidity:80,
+    timestamp: "2023-07-18T18:58:59.096Z"
+  },
+  {
+    id:4,
+    temperature:26,
+    humidity:85,
+    timestamp: "2023-07-18T19:58:59.096Z"
+  },
+  {
+    id:5,
+    temperature:28,
+    humidity:75,
+    timestamp: "2023-07-18T20:58:59.096Z"
+  }
+];
+var data = {
+  labels: ChartData.reduce((curr,col) => {
+    return curr.concat(col.timestamp.substring(11, 13));
+}, []),
+  datasets: [{
+    label: "Nhiệt độ",
+    backgroundColor: "rgba(255,99,132,0.2)",
+    borderColor: "rgba(255,99,132,1)",
+    borderWidth: 2,
+    hoverBackgroundColor: "rgba(255,99,132,0.4)",
+    hoverBorderColor: "rgba(255,99,132,1)",
+    data: ChartData.reduce((curr,col) => {
+      return curr.concat(col.temperature);
+  }, [])
+  }]
+};
+
+var options = {
+  maintainAspectRatio: false,
+  scales: {
+    y: {
+      stacked: true,
+      grid: {
+        display: true,
+        color: "rgba(255,99,132,0.2)"
+      }
+    },
+    x: {
+      grid: {
+        display: false
+      }
+    }
+  }
+};
+
+new Chart('son-tra-1-chart', {
+  type: 'bar',
+  options: options,
+  data: data
+});
