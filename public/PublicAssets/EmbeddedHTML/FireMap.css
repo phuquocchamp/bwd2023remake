@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Rubik:wght@300&display=swap');
 * {
     margin: 0;
     transition: 500ms;
@@ -17,11 +18,46 @@ body svg .st3 {
     cursor: pointer;
 }
 
+
+
 body .chart-container {
-    position: relative;
     height: 80%;
-    width: 80%;
-  }
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.chart-container canvas {
+    width: 60%;
+}
+
+.button-page-container {
+    height: 60%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.button-page-container>*{
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.625);
+}
+
+.button-page-container .temperature {
+    background-color: rgba(255, 75, 75, 0.736);
+}
+
+.button-page-container .humidity {
+    background-color: rgba(101, 146, 245, 0.736);
+}
 
 @media only screen and (max-width: 1300px) {
     body svg {
@@ -87,6 +123,7 @@ body .chart-container {
     margin: 10px auto;
     backdrop-filter: blur(5px);
     border-radius: 5px;
+    display: flex;
 }
 
 .box .main-box .exit {

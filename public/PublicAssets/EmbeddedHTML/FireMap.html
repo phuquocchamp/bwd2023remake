@@ -7,9 +7,7 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="FireMap.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css">
-	<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
-	</script>
+	<script src="https://unpkg.com/chart.js@4.2.0/dist/chart.umd.js"></script>
 </head>
 
 <body>
@@ -98,7 +96,7 @@
 		<polygon class="st1" points="541.89,303.19 549.98,301.53 552.62,299.96 557.38,299.96 557.38,301.57 554.49,304.15 551.6,305.74 
 	550.74,306.77 545.98,309.32 541.89,309.32 537.98,307.79 537.98,305.23 " />
 		<path class="st2" d="M295.09,309.32" />
-		<circle id="son-tra-1" class="st3 fire" cx="67.77" cy="297.45" r="1" />
+		<circle id="son-tra-1" class="st3" cx="67.77" cy="297.45" r="1" />
 		<circle id="bach-ma-1" class="st3" cx="33.72" cy="289.02" r="1" />
 	</svg>
 
@@ -109,7 +107,13 @@
 			</div>
 			<div class="chart-container">
 				<canvas id="son-tra-1-chart"></canvas>
+				<canvas id="son-tra-1-chart-humidity" class="none"></canvas>
+				<div class="button-page-container">
+					<button class="temperature">Nhiệt độ</button>
+					<button class="humidity">Độ ẩm</button>
+				</div>
 			</div>
+			
 		</div>
 	</div>
 	<div id="bach-ma-1-box" class="box none">
