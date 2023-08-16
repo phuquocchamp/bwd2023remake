@@ -9,17 +9,19 @@ const minus = document.querySelector('#minus');
 let BachMa_isBurning = 0;
 let SonTra_isBurning = 0;
 let circles;
-const handleMinus=() => {
+const handleMinus = () => {
   circle.style.r = 20 / currentScale + 'px';
 }
-const handlePlus=() => {
+const handlePlus = () => {
   circle.style.r = 20 / currentScale + 'px';
 }
-const handleWheel=() => {
+const handleWheel = () => {
   circle.style.r = 20 / currentScale + 'px';
 }
 setInterval(() => {
-  fetch('http://localhost:8080/api/sensors')
+  fetch('http://localhost:8080/api/sensors', {
+    method: 'POST'
+  })
     .then((response) => response.json())
     .then((result) => {
       if (result.temperature > 50 || result.humidity < 40) {
@@ -35,15 +37,15 @@ setInterval(() => {
       else {
         Sensors[0].classList.remove('fire')
       }
-      if(!Sensors[0].classList.contains('fire')) {
-        svg.removeEventListener('wheel',handleWheel);
-      plus.removeEventListener('click',handlePlus);
-      minus.removeEventListener('click',handleMinus);
+      if (!Sensors[0].classList.contains('fire')) {
+        svg.removeEventListener('wheel', handleWheel);
+        plus.removeEventListener('click', handlePlus);
+        minus.removeEventListener('click', handleMinus);
         Sensors[0].style.fill = '#048743';
-        Sensors[0].style.r = 1+'px';
-      
+        Sensors[0].style.r = 1 + 'px';
+
       }
-      
+
       circles = document.querySelectorAll('.fire');
       circles.forEach(circle => {
         circle.style.fill = 'rgba(255, 0, 0, 0.55)';
@@ -58,12 +60,12 @@ setInterval(() => {
 }, 1000);
 
 
-plus.onclick= () => {
+plus.onclick = () => {
   currentScale += 0.5;
   updateTransform();
 };
 
-minus.onclick= () => {
+minus.onclick = () => {
   currentScale -= 0.5;
   updateTransform();
 };
@@ -120,7 +122,7 @@ function updateTransform() {
   svg.style.transform = `translate(${currentTranslateX}px, ${currentTranslateY}px) scale(${currentScale})`;
 }
 
-svg.onwheel= zoom;
+svg.onwheel = zoom;
 svg.addEventListener('mousedown', startPan);
 svg.addEventListener('mousemove', pan);
 svg.addEventListener('mouseup', endPan);
@@ -144,136 +146,145 @@ locations.forEach((location) => {
   });
 });
 
-let ChartData = [
-  {
-    id: 1,
-    temperature: 25,
-    humidity: 88,
-    timestamp: "2023-07-18T16:58:59.096Z"
-  },
-  {
-    id: 2,
-    temperature: 24,
-    humidity: 68,
-    timestamp: "2023-07-18T17:58:59.096Z"
-  },
-  {
-    id: 3,
-    temperature: 26,
-    humidity: 80,
-    timestamp: "2023-07-18T18:58:59.096Z"
-  },
-  {
-    id: 4,
-    temperature: 26,
-    humidity: 85,
-    timestamp: "2023-07-18T19:58:59.096Z"
-  },
-  {
-    id: 5,
-    temperature: 28,
-    humidity: 75,
-    timestamp: "2023-07-18T20:58:59.096Z"
-  },
-  {
-    id: 6,
-    temperature: 40,
-    humidity: 40,
-    timestamp: "2023-07-18T21:58:59.096Z"
-  },
-  {
-    id: 7,
-    temperature: 22,
-    humidity: 75,
-    timestamp: "2023-07-18T22:58:59.096Z"
-  },
-];
-var son_tra_1_temperature = {
-  data: {
-    labels: ChartData.reduce((curr, col) => {
-      return curr.concat(col.timestamp.substring(11, 13) + ':00');
-    }, []),
-    datasets: [{
-      label: "Nhiệt độ",
-      backgroundColor: "rgba(255,99,132,0.2)",
-      borderColor: "rgba(255,99,132,1)",
-      borderWidth: 2,
-      hoverBackgroundColor: "rgba(255,99,132,0.4)",
-      hoverBorderColor: "rgba(255,99,132,1)",
-      data: ChartData.reduce((curr, col) => {
-        return curr.concat(col.temperature);
-      }, [])
-    }]
-  },
-
-  options: {
-    maintainAspectRatio: false,
-    scales: {
-      y: {
-        max: 90,
-        stacked: true,
-        grid: {
-          display: true,
-          color: "rgba(255,99,132,0.2)"
-        }
+// let ChartData = [
+//   {
+//     id: 1,
+//     temperature: 25,
+//     humidity: 88,
+//     timestamp: "2023-07-18T16:58:59.096Z"
+//   },
+//   {
+//     id: 2,
+//     temperature: 24,
+//     humidity: 68,
+//     timestamp: "2023-07-18T17:58:59.096Z"
+//   },
+//   {
+//     id: 3,
+//     temperature: 26,
+//     humidity: 80,
+//     timestamp: "2023-07-18T18:58:59.096Z"
+//   },
+//   {
+//     id: 4,
+//     temperature: 26,
+//     humidity: 85,
+//     timestamp: "2023-07-18T19:58:59.096Z"
+//   },
+//   {
+//     id: 5,
+//     temperature: 28,
+//     humidity: 75,
+//     timestamp: "2023-07-18T20:58:59.096Z"
+//   },
+//   {
+//     id: 6,
+//     temperature: 40,
+//     humidity: 40,
+//     timestamp: "2023-07-18T21:58:59.096Z"
+//   },
+//   {
+//     id: 7,
+//     temperature: 22,
+//     humidity: 75,
+//     timestamp: "2023-07-18T22:58:59.096Z"
+//   },
+// ];
+fetch('http://localhost:8080/api/stats', {
+  method: 'POST'
+})
+  .then((response) => response.json())
+  .then((ChartData) => {
+    console.log(ChartData)
+    var son_tra_1_temperature = {
+      data: {
+        labels: ChartData.reduce((curr, col) => {
+          return curr.concat(col.timestamp.substring(11, 13) + ':00');
+        }, []),
+        datasets: [{
+          label: "Nhiệt độ",
+          backgroundColor: "rgba(255,99,132,0.2)",
+          borderColor: "rgba(255,99,132,1)",
+          borderWidth: 2,
+          hoverBackgroundColor: "rgba(255,99,132,0.4)",
+          hoverBorderColor: "rgba(255,99,132,1)",
+          data: ChartData.reduce((curr, col) => {
+            return curr.concat(col.temperature);
+          }, [])
+        }]
       },
-      x: {
-        grid: {
-          display: false
+
+      options: {
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            max: 90,
+            stacked: true,
+            grid: {
+              display: true,
+              color: "rgba(255,99,132,0.2)"
+            }
+          },
+          x: {
+            grid: {
+              display: false
+            }
+          }
         }
       }
-    }
-  }
-};
-var son_tra_1_humidity = {
-  data: {
-    labels: ChartData.reduce((curr, col) => {
-      return curr.concat(col.timestamp.substring(11, 13) + ':00');
-    }, []),
-    datasets: [{
-      label: "Độ ẩm",
-      backgroundColor: "#4da6ff",
-      borderColor: "#426cf5",
-      borderWidth: 2,
-      hoverBackgroundColor: "#426cf5",
-      hoverBorderColor: "#426cf5",
-      data: ChartData.reduce((curr, col) => {
-        return curr.concat(col.humidity);
-      }, [])
-    }]
-  },
-
-  options: {
-    maintainAspectRatio: false,
-    scales: {
-      y: {
-        max: 90,
-        stacked: true,
-        grid: {
-          display: true,
-          color: "#4da6ff"
-        }
+    };
+    var son_tra_1_humidity = {
+      data: {
+        labels: ChartData.reduce((curr, col) => {
+          return curr.concat(col.timestamp.substring(11, 13) + ':00');
+        }, []),
+        datasets: [{
+          label: "Độ ẩm",
+          backgroundColor: "#4da6ff",
+          borderColor: "#426cf5",
+          borderWidth: 2,
+          hoverBackgroundColor: "#426cf5",
+          hoverBorderColor: "#426cf5",
+          data: ChartData.reduce((curr, col) => {
+            return curr.concat(col.humidity);
+          }, [])
+        }]
       },
-      x: {
-        grid: {
-          display: false
+
+      options: {
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            max: 90,
+            stacked: true,
+            grid: {
+              display: true,
+              color: "#4da6ff"
+            }
+          },
+          x: {
+            grid: {
+              display: false
+            }
+          }
         }
       }
-    }
-  }
-};
+    };
 
-let son_tra_1_chart;
-let son_tra_1_chart_humidity;
-function renderChart(chart, id, options, data) {
-  chart = new Chart(id, {
-    type: 'bar',
-    options: options,
-    data: data
-  });
-};
-renderChart(son_tra_1_chart, 'son-tra-1-chart', son_tra_1_temperature.options, son_tra_1_temperature.data);
-renderChart(son_tra_1_chart_humidity, 'son-tra-1-chart-humidity', son_tra_1_humidity.options, son_tra_1_humidity.data);
+    let son_tra_1_chart;
+    let son_tra_1_chart_humidity;
+    function renderChart(chart, id, options, data) {
+      chart = new Chart(id, {
+        type: 'bar',
+        options: options,
+        data: data
+      });
+    };
+
+    renderChart(son_tra_1_chart, 'son-tra-1-chart', son_tra_1_temperature.options, son_tra_1_temperature.data);
+    renderChart(son_tra_1_chart_humidity, 'son-tra-1-chart-humidity', son_tra_1_humidity.options, son_tra_1_humidity.data);
+  })
+
 locations.forEach((location) => {
   location.addEventListener('click', () => {
     let locationbox = document.querySelector('#' + location.id + '-box');
