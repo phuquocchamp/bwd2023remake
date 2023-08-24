@@ -18,8 +18,9 @@ const handlePlus = () => {
 const handleWheel = () => {
   circle.style.r = 20 / currentScale + 'px';
 }
+const host='http://localhost:8080'
 setInterval(() => {
-  fetch('http://localhost:8080/api/sensors', {
+  fetch(host+'/api/sensors', {
     method: 'POST'
   })
     .then((response) => response.json())
@@ -190,7 +191,7 @@ locations.forEach((location) => {
 //     timestamp: "2023-07-18T22:58:59.096Z"
 //   },
 // ];
-fetch('http://localhost:8080/api/stats', {
+fetch(host+'/api/stats', {
   method: 'POST'
 })
   .then((response) => response.json())
