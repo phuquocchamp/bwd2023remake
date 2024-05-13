@@ -18,7 +18,7 @@ function App() {
         <Route path='/News' element={<News />} />
         <Route path='/Report' element={<Report />} />
         <Route path='/about-us' element={<AboutUs />} />
-        <Route path='/fundaraising' element={<Fundraising />} />
+        <Route path='/fundraising' element={<Fundraising />} />
         <Route path='/fire-map' element={<FireMap />} />
       </Routes>
       <Footer />

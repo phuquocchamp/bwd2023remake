@@ -1,7 +1,6 @@
 import { memo, useState } from 'react'
 import '../../CSS/Fundraising.css';
 import { useInView } from 'react-intersection-observer';
-import { json } from 'react-router-dom';
 
 
 const AnimatedLeftToRight = ({ children }) => {
@@ -28,18 +27,6 @@ const AnimatedRightToLeft = ({ children }) => {
         </div>
     );
 };
-const AnimatedBottomToTop = ({ children }) => {
-    const [ref, inView] = useInView({
-        triggerOnce: true,
-        threshold: 0.2,
-    });
-
-    return (
-        <div ref={ref} className={`animated-element ${inView ? 'animate-bottom-to-top' : ''}`}>
-            {children}
-        </div>
-    );
-};
 
 function Fundraising() {
     const [ho,setHo] = useState('');
@@ -49,25 +36,24 @@ function Fundraising() {
     const [money,setMoney] = useState(50000);
     const arr=[50,200,500,1000];
     function handleSubmit(e){
-        e.preventDefault();
-        //console.log(ho,ten,phoneNumber,money,email);
-        const data = {ho,ten,phoneNumber,money,email};
-        //post to server
-        fetch('http://127.0.0.1:5000/donate', {
-            method: 'POST',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data)
-        }).then((response) => {console.log(response); alert("Thành công")})
-        .then(()=>{updateTotal()});
+        // e.preventDefault();
+        // //console.log(ho,ten,phoneNumber,money,email);
+        // const data = {ho,ten,phoneNumber,money,email};
+        // //post to server
+        // fetch('http://127.0.0.1:5000/donate', {
+        //     method: 'POST',
+        //     headers: { "Content-Type": "application/json" },
+        //     body: JSON.stringify(data)
+        // }).then((response) => {console.log(response); alert("Thành công")})
+        // .then(()=>{updateTotal()});
     }
 
     function updateTotal() {
-        fetch('http://127.0.0.1:5000/getDonations')
-        .then((response)=>response.json())
-        .then((res)=>{setTotal(res.reduce((overall,curr)=>(overall+curr.money),0))})
-        .then(()=>{console.log(total)});
+        // fetch('http://127.0.0.1:5000/getDonations')
+        // .then((response)=>response.json())
+        // .then((res)=>{setTotal(res.reduce((overall,curr)=>(overall+curr.money),0))})
+        // .then(()=>{console.log(total)});
     }
-    const [total,setTotal] =useState(0);
     updateTotal();
 
     function handleMoney(e){
@@ -113,7 +99,7 @@ function Fundraising() {
                 <AnimatedRightToLeft>
                 <div className='total'>
                     <h2>Số tiền quyên góp được</h2>
-                    <h1>{numberWithDot(total)}<br></br>VND</h1>
+                    <h1>{numberWithDot(0)}<br></br>VND</h1>
                 </div>
                 </AnimatedRightToLeft>
             </div>

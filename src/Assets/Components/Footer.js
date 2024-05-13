@@ -3,24 +3,11 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import '../CSS/Footer.css';
-import { faEnvelope, faLocationDot, faPhoneFlip } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
-    const [email, setEmail] = React.useState('');
-    function handleSubmit(e) {
-        e.preventDefault();
-        console.log('Submitted');
-        const data = { email };
-        fetch('http://127.0.0.1:5000/mail', {
-            method: 'POST',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data)
-        }).then(() => {
-            console.log('Posted');
-        })
-    }
+
     return (
         <footer className="footer">
             {/* <div className="flow__container">
@@ -73,19 +60,19 @@ const Footer = () => {
                         <div className="social__panel">
                             <div className="social__item">
                                 <FontAwesomeIcon icon={faGithub} />
-                                <a href="https://github.com/phuquocchamp/bwd2023remake" aria-label="Link to github"></a>
+                                <a href="https://github.com/phuquocchamp/bwd2023remake" aria-label="Link to github"> </a>
                             </div>
                             <div className="social__item">
                                 <FontAwesomeIcon icon={faYoutube} />
-                                <a href="https://github.com/phuquocchamp/bwd2023remake"></a>
+                                <a href="https://github.com/phuquocchamp/bwd2023remake"> </a>
                             </div>
                             <div className="social__item">
                                 <FontAwesomeIcon icon={faFacebook} />
-                                <a href="https://github.com/phuquocchamp/bwd2023remake"></a>
+                                <a href="https://github.com/phuquocchamp/bwd2023remake"> </a>
                             </div>
                             <div className="social__item">
                                 <FontAwesomeIcon icon={faInstagram} />
-                                <a href="https://github.com/phuquocchamp/bwd2023remake"></a>
+                                <a href="https://github.com/phuquocchamp/bwd2023remake"> </a>
                             </div>
                         </div>
                     </div>
@@ -114,11 +101,11 @@ const Footer = () => {
                         <p className="item__heading">Đường dây nóng</p>
                         <ul className="item__menu">
                             <li>
-                                <a href="">114</a>
+                                <a href="/">114</a>
                             </li>
 
                             <li>
-                                <a href="">1900 969 960</a>
+                                <a href="/">1900 969 960</a>
                             </li>
                             {/* <li>
                                 <a href="">Brangding Design</a>

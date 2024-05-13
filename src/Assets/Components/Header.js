@@ -113,7 +113,7 @@ function Header() {
           </li>
         </ul>
 
-        <Link to="/fundaraising" className="fundaraising">Đóng góp</Link>
+        <Link to="/fundraising" className="fundaraising">Đóng góp</Link>
         <img src={bar} alt="bar" className="bar-icon" onClick={handleBar} />
         <ul className={barClass} style={mobileNavStyle}>
           <li key="1" onClick={handleBar}>

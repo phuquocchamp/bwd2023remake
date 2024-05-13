@@ -45,7 +45,7 @@ Chính quyền tỉnh Alberta cho biết, trên toàn tỉnh đang xảy ra k
         </div>
         <div className="right__column">
           <div className="news__card">
-            <h2 className="card__heading"></h2>
+            {/* <h2 className="card__heading"></h2> */}
             <div className="card__img bg3">
             </div>
             <p className="card__text"> </p>      
